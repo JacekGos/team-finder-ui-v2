@@ -1,0 +1,15 @@
+.brand-title {
+    font-size: 25px;
+    margin-bottom: 0;
+    font-weight: 500;
+    color: #B6C2CF;
+    display: flex;
+    align-items: center;
+    padding: 0 5px 0 5px;
+    transition: background-color 0.3s;
+}
+
+.brand-title:hover {
+   background-color: #333C43;
+   border-radius: 3px;
+}
