@@ -1,6 +1,5 @@
-import * as React from 'react';
 import './topbar.css';
-import { Container, Navbar, Nav, Form, Button } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import { RiTeamLine } from "react-icons/ri";
 import { TbMenu2 } from "react-icons/tb";
 
@@ -20,7 +19,7 @@ export default function Topbar(props: IAppProps) {
                 </p>
             </Navbar.Brand>
             <Navbar.Toggle>
-                <TbMenu2 color='#62707a'/>
+                <TbMenu2 color='#62707a' />
             </Navbar.Toggle>
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto" />
