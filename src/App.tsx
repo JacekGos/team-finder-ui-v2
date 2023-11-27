@@ -7,9 +7,7 @@ function App() {
   return (
     <>
       <Topbar />
-      <div style={{ marginTop: 60, maxHeight: '100%' }}>
-        <Filterbar />
-      </div>
+      <Filterbar />
     </>
   );
 }
