@@ -9,3 +9,17 @@ body {
   height: 100vh !important;
 }
 
+.button-filled {
+  padding: 5px;
+  border-radius: 3px;
+  color: black;
+  border: 1px solid rgb(0, 153, 255);
+  background-color: rgb(0, 153, 255);
+  transition: background-color 0.2s;
+  font-weight: 500;
+}
+
+.button-filled:hover {
+  background-color: rgb(98, 187, 247);
+}
+

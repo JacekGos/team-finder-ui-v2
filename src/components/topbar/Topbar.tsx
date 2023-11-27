@@ -35,9 +35,10 @@ export default function Topbar(props: IAppProps) {
                 <Nav>
                     <Nav.Item>
                         <Nav.Link eventKey={2} href="/signin" >
-                            <div className='nav-item-filled'>
+                            {/* <div className='nav-item-filled'> */}
+                            <button className='button-filled'>
                                 Zaloguj
-                            </div>
+                            </button>
                         </Nav.Link>
                     </Nav.Item>
                 </Nav>

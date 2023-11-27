@@ -63,15 +63,3 @@
     background-color: #333C43;
     border-radius: 3px;
 }
-
-.nav-item-filled {
-    padding: 5px;
-    border-radius: 3px;
-    border: 1px solid rgb(0, 153, 255);
-    background-color: #333C43;
-    transition: background-color 0.2s;
-}
-
-.nav-item-filled:hover {
-    background-color: #62707a;
-}

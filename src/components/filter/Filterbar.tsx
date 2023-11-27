@@ -9,6 +9,9 @@ export interface IAppProps {
 }
 
 export default function Filterbar(props: IAppProps) {
+
+    // const icons
+
     return (
         <div >
             <Row className="d-none d-lg-flex" style={{ height: 90, background: '#1D2125'}}>
@@ -37,12 +40,12 @@ export default function Filterbar(props: IAppProps) {
                     </Button>
                 </Col>
                 <Col xs={7} sm={5} md={4} className="d-flex align-items-center justify-content-end">
-                    <Button className="input-filters text-nowrap d-flex align-items-center me-2"
+                    <button className="button-filled text-nowrap d-flex align-items-center me-2"
                         // onClick={() => handleModal(false, 'advanced')}
                     >
                         <BsSliders2 className="me-1 d-none d-lg-flex" />
                         Więcej filtrów
-                    </Button>
+                    </button>
                 </Col>
             </Row>
         </div>
