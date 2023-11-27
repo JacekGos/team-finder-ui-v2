@@ -5,10 +5,10 @@ import { TbMenu2 } from "react-icons/tb";
 
 
 
-export interface IAppProps {
+export interface ITopbarProps {
 }
 
-export default function Topbar(props: IAppProps) {
+export default function Topbar(props: ITopbarProps) {
 
     return (
         <Navbar collapseOnSelect expand="lg" className="position-fixed position-absolute w-100 top-0 left-0">
