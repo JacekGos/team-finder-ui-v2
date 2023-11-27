@@ -7,18 +7,17 @@ export interface IMobileViewProps {
 }
 
 export default function MobileView(props: IMobileViewProps) {
-    console.log('mobile view')
 
     return (
         <>
-            <Row className="d-flex d-lg-none position-fixed w-100" style={{ height: 90, padding: '8px 30px 1px 10px', backgroundColor: '#0A1929', marginTop: -10 }}>
+            <Row className="position-fixed w-100" style={{ height: 90, padding: '0 0 0 10px', backgroundColor: '#1D2125', marginTop: -10 }}>
                 <Col className="d-flex align-items-center ps-0 overflow-scroll no-scrollbar">
-                    <Button className="input-base rounded-circle me-2" onClick={() => props.handleModal(true, 'simple')}>
+                    <button className="btn-rounded rounded-circle me-3" onClick={() => props.handleModal(true, 'simple')}>
                         <SlMagnifier />
-                    </Button>
-                    <Button className="input-base text-nowrap d-flex align-items-center me-2" onClick={() => props.handleModal(true, 'advanced')}>
+                    </button>
+                    <button className="btn-base text-nowrap d-flex align-items-center me-2" onClick={() => props.handleModal(true, 'advanced')}>
                         Więcej filtrów
-                    </Button>
+                    </button>
                 </Col>
             </Row>
         </>

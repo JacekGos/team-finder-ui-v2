@@ -43,7 +43,7 @@ export default function DesktopView(props: IDesktopViewProps) {
                         </Button>
                     </Col>
                     <Col xs={7} sm={5} md={4} className="d-flex align-items-center justify-content-end">
-                        <button className="button-filled text-nowrap d-flex align-items-center me-2"
+                        <button className="btn-base text-nowrap d-flex align-items-center me-2"
                             onClick={() => props.handleModal(false, 'advanced')}
                         >
                             <BsSliders2 className="me-1 d-none d-lg-flex" />

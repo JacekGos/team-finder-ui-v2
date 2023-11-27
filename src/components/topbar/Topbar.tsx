@@ -36,7 +36,7 @@ export default function Topbar(props: ITopbarProps) {
                     <Nav>
                         <Nav.Item>
                             <Nav.Link eventKey={2} href="/signin" >
-                                <button className='button-filled'>
+                                <button className='btn-base btn-filled'>
                                     Zaloguj
                                 </button>
                             </Nav.Link>
