@@ -47,8 +47,6 @@ body {
   border: 1px solid rgb(78, 106, 124);
   background-color: #333C43;
   color: #B6C2CF;
-  width: 35px;
-  height: 35px;
   transition: background-color 0.2s;
   font-weight: 500;
 }

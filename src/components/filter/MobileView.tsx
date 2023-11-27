@@ -1,25 +1,39 @@
-import { Button, Col, Row } from 'react-bootstrap';
-import './filterbar.css';
+import { Button, Col, Row } from "react-bootstrap";
+import "./filterbar.css";
 import { SlMagnifier } from "react-icons/sl";
 
 export interface IMobileViewProps {
-    handleModal: (isFullscreen: boolean, type: string) => void;
+  handleModal: (isFullscreen: boolean, type: string) => void;
 }
 
 export default function MobileView(props: IMobileViewProps) {
-
-    return (
-        <>
-            <Row className="position-fixed w-100" style={{ height: 90, padding: '0 0 0 10px', backgroundColor: '#1D2125', marginTop: -10 }}>
-                <Col className="d-flex align-items-center ps-0 overflow-scroll no-scrollbar">
-                    <button className="btn-rounded rounded-circle me-3" onClick={() => props.handleModal(true, 'simple')}>
-                        <SlMagnifier />
-                    </button>
-                    <button className="btn-base text-nowrap d-flex align-items-center me-2" onClick={() => props.handleModal(true, 'advanced')}>
-                        Więcej filtrów
-                    </button>
-                </Col>
-            </Row>
-        </>
-    );
+  return (
+    <>
+      <Row
+        className="position-fixed w-100"
+        style={{
+          height: 90,
+          padding: "0 0 0 10px",
+          backgroundColor: "#1D2125",
+          marginTop: -10,
+        }}
+      >
+        <Col className="d-flex align-items-center ps-0 overflow-scroll no-scrollbar">
+          <button
+            className="btn-rounded rounded-circle me-3"
+            style={{aspectRatio: '1/1'}}
+            onClick={() => props.handleModal(true, "simple")}
+          >
+            <SlMagnifier size={25}/>
+          </button>
+          <button
+            className="btn-base text-nowrap d-flex align-items-center me-2"
+            onClick={() => props.handleModal(true, "advanced")}
+          >
+            Więcej filtrów
+          </button>
+        </Col>
+      </Row>
+    </>
+  );
 }
