@@ -1,3 +1,4 @@
+import { GoogleMap } from "@react-google-maps/api";
 import * as React from "react";
 import { ReactElement } from "react";
 import { Col, Container, Row } from "react-bootstrap";
@@ -5,6 +6,7 @@ import MediaQuery from "react-responsive";
 
 export interface IEventsDesktopViewProps {
   eventsData: React.ReactElement[];
+  googleMaps: React.ReactElement;
 }
 
 export default function EventsDesktopView(props: IEventsDesktopViewProps) {
@@ -19,7 +21,9 @@ export default function EventsDesktopView(props: IEventsDesktopViewProps) {
           <Col md={6} style={{ overflowY: "scroll", maxHeight: "80vh" }}>
             {props.eventsData}
           </Col>
-          <Col md={6}></Col>
+          <Col md={6}>
+            {props.googleMaps}
+          </Col>
           {/* <Col>
             {!isLoaded ? (
               <div style={{ color: "white" }}>Ładowanie mapy...</div>

@@ -110,3 +110,33 @@ input[type="number"] {
 .form-text {
   color: #b6c2b4 !important;
 }
+
+.loader-container {
+  /* width: 30;
+  height: 100vh; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 8px solid;
+  border-color: #a7a7a7  transparent #a7a7a7  transparent;
+  border-radius: 50%;
+  animation: spin-anim 1.2s linear infinite;
+  margin-top: 40px;
+}
+
+@keyframes spin-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

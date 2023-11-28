@@ -5,6 +5,7 @@ import MediaQuery from "react-responsive";
 
 export interface IEventsMobileViewProps {
   eventsData: React.ReactElement[];
+  googleMaps: React.ReactElement;
 }
 
 export default function EventsMobileView(props: IEventsMobileViewProps) {
@@ -17,6 +18,9 @@ export default function EventsMobileView(props: IEventsMobileViewProps) {
           style={{ overflowY: "scroll", maxHeight: "70vh" }}
         >
           {props.eventsData}
+        </Tab>
+        <Tab eventKey="map" title="Mapa">
+          {props.googleMaps}
         </Tab>
       </Tabs>
       {/* <Tabs className="tabs " style={{ marginTop: 150 }}>
