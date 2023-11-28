@@ -39,9 +39,10 @@ export default function SimpleModalContent(props: ISimpleModalContentProps) {
       name: "Rower",
     },
   ];
+
   return (
     <>
-      <Modal.Header className="modal-base">
+      <Modal.Header className="modal-base modal-bottom-border">
         <Modal.Title>Wyszukaj</Modal.Title>
         <button
           className="btn-base rounded-circle d-flex align-items-center p-2"
@@ -78,21 +79,9 @@ export default function SimpleModalContent(props: ISimpleModalContentProps) {
             })}
             <div style={{ marginTop: 70 }}></div>
           </Form.Group>
-          {/* <div className="d-flex align-items-center justify-content-center  w-100 mt-3"> */}
-          <div className="position-fixed position-absolute bottom-0 end-1 d-flex align-items-center justify-content-center w-100">
+          <div className="d-flex align-items-center justify-content-center  w-100 mt-3">
             <button className="btn-base btn-filled">Pokaż wydażenia</button>
           </div>
-          {/* <Container
-            className="position-fixed position-absolute bottom-0 end-0 d-flex align-items-center justify-content-center w-100"
-            style={{
-              padding: "5px 0px 5px 10px",
-              backgroundColor: "#0A1929",
-              height: 70,
-              borderTop: "1px solid #103861",
-            }}
-          >
-            <button className="input-base ">Pokaż wydażenia</button>
-          </Container> */}
         </Form>
       </Modal.Body>
     </>
