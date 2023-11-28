@@ -8,13 +8,13 @@ function App() {
   return (
     <>
       <Topbar />
-      <Container
-        fluid
+      <div
+        // fluid
         style={{ marginTop: 60, maxHeight: "100%", backgroundColor: "#1D2125" }}
       >
         <Filterbar />
         <Events />
-      </Container>
+      </div>
     </>
   );
 }

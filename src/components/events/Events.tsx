@@ -36,7 +36,7 @@ export default function Events(props: IEventsProps) {
       //       mapContainerClassName="map-container"
       //     />
       // );
-      return <Loading />
+      return <Loading />;
     } else {
       return <div style={{ color: "white" }}>Ładowanie mapy...</div>;
     }
@@ -79,7 +79,7 @@ export default function Events(props: IEventsProps) {
 
   return (
     <>
-      <Container fluid className="p-0">
+      <Container fluid className="ps-2">
         <MediaQuery minWidth={992}>
           <EventsDesktopView eventsData={eventsData} googleMaps={getMap()} />
         </MediaQuery>
