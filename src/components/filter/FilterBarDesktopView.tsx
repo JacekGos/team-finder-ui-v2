@@ -5,11 +5,11 @@ import { FaVolleyballBall, FaBasketballBall } from "react-icons/fa";
 import { IoIosBicycle } from "react-icons/io";
 import { BsSliders2 } from "react-icons/bs";
 
-export interface IDesktopViewProps {
+export interface IFilterBarDesktopViewProps {
     handleModal: (isFullscreen: boolean, type: string) => void;
 }
 
-export default function DesktopView(props: IDesktopViewProps) {
+export default function FilterBarDesktopView(props: IFilterBarDesktopViewProps) {
 
     const iconSize = 35;
     const iconColor = 'white';

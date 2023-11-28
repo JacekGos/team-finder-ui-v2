@@ -1,8 +1,8 @@
 html,
 body {
   margin: 0;
-  font-family: 'Nunito', sans-serif;
-  background-color: #1D2125;
+  font-family: "Nunito", sans-serif;
+  background-color: #1d2125;
 }
 
 .body {
@@ -15,12 +15,12 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #092642;
+  background-color: rgba(95, 94, 94, 0.7);
   border-radius: 16px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(95, 94, 94, 0.7);
+  background-color: #343435;
   border-radius: 16px;
 }
 
@@ -30,8 +30,8 @@ body {
 
 .btn-base {
   border: 1px solid rgb(78, 106, 124);
-  background-color: #333C43;
-  color: #B6C2CF;
+  background-color: #333c43;
+  color: #b6c2cf;
   padding: 5px;
   border-radius: 3px;
   transition: background-color 0.2s;
@@ -45,8 +45,8 @@ body {
 
 .btn-rounded {
   border: 1px solid rgb(78, 106, 124);
-  background-color: #333C43;
-  color: #B6C2CF;
+  background-color: #333c43;
+  color: #b6c2cf;
   transition: background-color 0.2s;
   font-weight: 500;
 }
@@ -67,8 +67,8 @@ body {
 
 .modal-base {
   z-index: 1100 !important;
-  background-color: #333C43 !important;
-  color: #B6C2CF !important;
+  background-color: #333c43 !important;
+  color: #b6c2cf !important;
 }
 
 .modal-body {
@@ -80,7 +80,7 @@ body {
   border-bottom: solid 1px #828587 !important;
 }
 
-input[type=range]::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track {
   height: 2px;
   cursor: pointer;
   background: #65707a;
@@ -88,25 +88,25 @@ input[type=range]::-webkit-slider-runnable-track {
   border: 0px solid #010101;
 }
 
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   background-color: #2b3744;
   border: 1px solid #b5b7b9;
   outline: none;
   margin-top: -7px;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button { 
-      -webkit-appearance: none; 
-      margin: 0; 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-input[type=number] { 
+input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
-  margin: 0; 
+  margin: 0;
 }
 
 .form-text {
-  color: #B6C2B4 !important;
+  color: #b6c2b4 !important;
 }
