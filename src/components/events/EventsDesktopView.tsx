@@ -34,8 +34,7 @@ export default function EventsDesktopView(props: IEventsDesktopViewProps) {
             {eventsData}
           </Col>
           <Col md={6}>
-            {/* {props.googleMaps} */}
-            <Map />
+            <Map events={props.events}/>
           </Col>
           {/* <Col>
             {!isLoaded ? (
