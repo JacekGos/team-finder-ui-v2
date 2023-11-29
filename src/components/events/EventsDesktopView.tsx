@@ -1,15 +1,27 @@
 import { GoogleMap } from "@react-google-maps/api";
 import * as React from "react";
-import { ReactElement } from "react";
+import { ReactElement, useMemo } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import MediaQuery from "react-responsive";
+import Map from "../map/Map";
+import EventTab from "./EventTab";
+import { SportEvent } from "./model/eventModel";
 
 export interface IEventsDesktopViewProps {
-  eventsData: React.ReactElement[];
-  googleMaps: React.ReactElement;
+  events: SportEvent[];
+  // eventsData: React.ReactElement[];
+  // googleMaps: React.ReactElement;
 }
 
 export default function EventsDesktopView(props: IEventsDesktopViewProps) {
+  const eventsData = useMemo(
+    () =>
+      props.events.map((data, key) => {
+        return <EventTab key={key} index={key} event={data} />;
+      }),
+    []
+  );
+
   return (
     <>
       <Container
@@ -19,10 +31,11 @@ export default function EventsDesktopView(props: IEventsDesktopViewProps) {
       >
         <Row className="d-flex">
           <Col md={6} style={{ overflowY: "scroll", maxHeight: "80vh" }}>
-            {props.eventsData}
+            {eventsData}
           </Col>
           <Col md={6}>
-            {props.googleMaps}
+            {/* {props.googleMaps} */}
+            <Map />
           </Col>
           {/* <Col>
             {!isLoaded ? (

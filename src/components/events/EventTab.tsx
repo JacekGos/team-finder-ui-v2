@@ -50,7 +50,7 @@ export default function EventTab(props: IEventTabProps) {
           <Col
             xs={3}
             className="d-flex align-items-center justify-content-center "
-            style={{ backgroundColor: "#1D2125", borderRadius: 3 }}
+            style={{ backgroundColor: "#1D2125", borderRadius: 3, maxHeight: '100%' }}
           >
             {icon(props.event.discipline)}
           </Col>
