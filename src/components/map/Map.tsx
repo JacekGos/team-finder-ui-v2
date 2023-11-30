@@ -1,8 +1,9 @@
 import {
   GoogleMap,
-  Marker,
+  MarkerF,
   useJsApiLoader,
   MarkerClusterer,
+  CircleF,
   InfoWindow,
 } from "@react-google-maps/api";
 import "./map.css";
@@ -18,6 +19,23 @@ export interface IMapProps {
 
 type LatLngLiteral = google.maps.LatLngLiteral;
 type MapOptions = google.maps.MapOptions;
+
+const defaultOptions = {
+  strokeOpacity: 0.5,
+  strokeWeight: 2,
+  clickable: false,
+  draggable: false,
+  editable: false,
+  visible: true,
+};
+
+const closeOptions = {
+  ...defaultOptions,
+  zIndex: 3,
+  fillOpacity: 0.05,
+  strokeColor: "#8BC34A",
+  fillColor: "#8BC34A",
+};
 
 export default function Map(props: IMapProps) {
   const mapRef = useRef<GoogleMap>();
@@ -69,13 +87,25 @@ export default function Map(props: IMapProps) {
     });
     if (foundIcon != undefined) return foundIcon["icon"];
     else return undefined;
-    // return foundIcon?.icon;
+    // return foundIcon !== undefined ? foundIcon["icon"] : undefined;
   }
 
   const testEvents: LatLngLiteral[] = [
-    {lat: 52.1976, lng: 20.8814 },
-    {lat: 52.0976, lng: 20.8814 }
-]
+    { lat: 52.1976, lng: 20.8814 },
+    { lat: 52.0976, lng: 20.8814 },
+  ];
+
+  const markersArray: Function = (clusterer: any): JSX.Element[] => {
+    return props.events.map((event, index) => (
+      <MarkerF
+        key={index}
+        position={event.location}
+        clusterer={clusterer}
+        onLoad={() => {console.log('marker loaded')}}
+        icon={getIcon(event.discipline)}
+      />
+    ));
+  };
 
   return isLoaded ? (
     <GoogleMap
@@ -85,8 +115,13 @@ export default function Map(props: IMapProps) {
       onLoad={onLoad}
       mapContainerClassName="map-container"
     >
-        <Marker position={{lat: 52.1976, lng: 20.8814}} icon={getIcon('football')}/>
+      <MarkerClusterer>
+        {(clusterer) => markersArray(clusterer)}
+      </MarkerClusterer>
 
+      {}
+
+      <CircleF center={testEvents[0]} radius={100000} options={closeOptions} />
       {/* <Marker key={0} position={props.events[0].location} /> */}
       {/* <MarkerClusterer
         gridSize={30}
