@@ -14,8 +14,6 @@ function App() {
         <Routes>
           <Route path="/signin" element={<Login />} />
           <Route path="/" element={<MainLayout />}>
-            {/* <Topbar /> */}
-
             <Route
               path="/"
               element={

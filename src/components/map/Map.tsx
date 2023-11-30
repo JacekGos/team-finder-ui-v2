@@ -1,6 +1,6 @@
 import {
   GoogleMap,
-  MarkerF,
+  Marker,
   useJsApiLoader,
   MarkerClusterer,
   CircleF,
@@ -11,7 +11,6 @@ import Loading from "../utils/Loading";
 import { useCallback, useMemo, useRef } from "react";
 import { SportEvent } from "../events/model/eventModel";
 import { icons } from "./icons";
-import { Icon } from "./model/mapModel";
 
 export interface IMapProps {
   events: SportEvent[];
@@ -67,7 +66,7 @@ export default function Map(props: IMapProps) {
     id: "google-map-script",
     // googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     // googleMapsApiKey: getApiKey(),
-    googleMapsApiKey: "",
+    googleMapsApiKey: "AIzaSyCv2XeMYboyl-HxMrWtrUFT2fiDGPjsKmc",
     version: "weekly",
     nonce: undefined,
     language: "PL",
@@ -97,7 +96,7 @@ export default function Map(props: IMapProps) {
 
   const markersArray: Function = (clusterer: any): JSX.Element[] => {
     return props.events.map((event, index) => (
-      <MarkerF
+      <Marker
         key={index}
         position={event.location}
         clusterer={clusterer}
