@@ -1,8 +1,5 @@
-import { GoogleMap } from "@react-google-maps/api";
-import * as React from "react";
-import { ReactElement, useMemo } from "react";
+import { useMemo } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import MediaQuery from "react-responsive";
 import Map from "../map/Map";
 import EventTab from "./EventTab";
 import { SportEvent } from "./model/eventModel";

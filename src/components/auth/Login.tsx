@@ -2,6 +2,8 @@ import { useState, useRef, useEffect, useContext } from "react";
 import { useNavigate, useLocation, Navigate } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import axios from "axios";
+import "./login.css";
+
 
 export default function Login() {
   console.log("login page");
@@ -86,7 +88,7 @@ export default function Login() {
     <div className="d-flex flex-column" style={{ backgroundColor: "#1D2125" }}>
       <Container
         fluid
-        className="login-page d-flex flex-column justify-content-center"
+        className="d-flex flex-column justify-content-center"
         style={{ minHeight: "100vh" }}
       >
         <Row className="d-flex">
@@ -98,7 +100,7 @@ export default function Login() {
               <div className="form-floating">
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control login-form"
                   id="username"
                   ref={userRef}
                   autoComplete="off"
@@ -112,7 +114,7 @@ export default function Login() {
               <div className="form-floating">
                 <input
                   type="password"
-                  className="form-control"
+                  className="form-control login-form"
                   id="password"
                   placeholder="password"
                   value={password}

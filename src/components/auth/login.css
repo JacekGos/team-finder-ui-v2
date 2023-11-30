@@ -1,0 +1,23 @@
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    height: 40vh !important;
+    /* padding-bottom: 0rem; */
+    /* background-image: url("../images/login-background.png");
+    background-size: cover;
+    background-position: center center; */
+}
+
+.form-floating {
+    padding-bottom: 20px;
+    width: 300px;
+    font-weight: 600;
+    color: rgb(0, 0, 0)
+}
+
+.login-form {
+    background-color: #1D2125;
+    border: 1px solid rgb(185, 184, 184);
+}

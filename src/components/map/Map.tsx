@@ -66,7 +66,7 @@ export default function Map(props: IMapProps) {
     id: "google-map-script",
     // googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     // googleMapsApiKey: getApiKey(),
-    googleMapsApiKey: "AIzaSyCv2XeMYboyl-HxMrWtrUFT2fiDGPjsKmc",
+    googleMapsApiKey: "",
     version: "weekly",
     nonce: undefined,
     language: "PL",
