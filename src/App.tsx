@@ -12,10 +12,18 @@ function App() {
     <>
       <HashRouter>
         <Routes>
-          <Route path="/signin" element={<Login />} />
+          <Route
+            path="/signin"
+            element={
+              <>
+                <Topbar />
+                <Login />
+              </>
+            }
+          />
           <Route path="/" element={<MainLayout />}>
             <Route
-              path="/"
+              index
               element={
                 <div
                   style={{
@@ -29,6 +37,37 @@ function App() {
                 </div>
               }
             />
+            <Route
+              path="/events"
+              element={
+                <div
+                  style={{
+                    marginTop: 60,
+                    maxHeight: "100%",
+                    backgroundColor: "#1D2125",
+                  }}
+                >
+                  <Filterbar />
+                  <Events />
+                </div>
+              }
+            />
+
+            {/* <Route
+              path="/"
+              element={
+                <div
+                  style={{
+                    marginTop: 60,
+                    maxHeight: "100%",
+                    backgroundColor: "#1D2125",
+                  }}
+                >
+                  <Filterbar />
+                  <Events />
+                </div>
+              }
+            /> */}
           </Route>
         </Routes>
       </HashRouter>

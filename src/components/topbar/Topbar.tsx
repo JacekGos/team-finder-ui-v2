@@ -2,6 +2,7 @@ import "./topbar.css";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { RiTeamLine } from "react-icons/ri";
 import { TbMenu2 } from "react-icons/tb";
+import { NavLink } from "react-router-dom";
 
 export interface ITopbarProps {}
 
@@ -26,14 +27,14 @@ export default function Topbar(props: ITopbarProps) {
           <Nav className="me-auto" />
           <Nav>
             <Nav.Item>
-              <Nav.Link eventKey={1} href="/events">
+              <Nav.Link as={NavLink} to={"/events"} eventKey={1}>
                 <div className="nav-item-not-filled">Wydarzenia</div>
               </Nav.Link>
             </Nav.Item>
           </Nav>
           <Nav>
             <Nav.Item>
-              <Nav.Link eventKey={2} href="/signin">
+            <Nav.Link as={NavLink} to={"/signin"} eventKey={2}>
                 <button className="btn-base btn-filled">Zaloguj</button>
               </Nav.Link>
             </Nav.Item>

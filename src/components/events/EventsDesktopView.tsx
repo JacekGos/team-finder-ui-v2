@@ -36,33 +36,6 @@ export default function EventsDesktopView(props: IEventsDesktopViewProps) {
           <Col md={6}>
             <Map events={props.events}/>
           </Col>
-          {/* <Col>
-            {!isLoaded ? (
-              <div style={{ color: "white" }}>Ładowanie mapy...</div>
-            ) : (
-              <GoogleMap
-                zoom={zoom}
-                center={center}
-                options={options}
-                onLoad={onLoad}
-                mapContainerClassName="map-container"
-              >
-                <MarkerClusterer gridSize={30}>
-                  {(clusterer) =>
-                    events.map((event, index) => (
-                      <Marker
-                        key={index}
-                        position={event.location}
-                        clusterer={clusterer}
-                        icon={getIcon(event.discipline)}
-                        onClick={() => showInfo(index)}
-                      />
-                    ))
-                  }
-                </MarkerClusterer>
-              </GoogleMap>
-            )}
-          </Col> */}
         </Row>
       </Container>
     </>

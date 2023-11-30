@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect, useContext } from "react";
 import { useNavigate, useLocation, Navigate } from "react-router-dom";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import axios from "axios";
 
 export default function Login() {
-  // const { userData, setUserData } = useContext(AuthContext);
+  console.log("login page");
 
   const ipAddr = window.location.hostname;
   const port = window.location.port;
@@ -32,8 +32,6 @@ export default function Login() {
     localStorage.setItem("login", "");
     localStorage.setItem("roles", JSON.stringify("[]"));
     localStorage.setItem("token", "");
-
-    // setUserData({ login: '', roles: [], token: '' });
   }
 
   const handleSumbit = async (e: React.FormEvent) => {
@@ -65,8 +63,6 @@ export default function Login() {
         localStorage.setItem("roles", JSON.stringify(roles));
         localStorage.setItem("token", token);
 
-        // setUserData({ login, roles, token });
-
         setLogin("");
         setPassword("");
         navigate("/");
@@ -87,57 +83,55 @@ export default function Login() {
   };
 
   return (
-    <Container className="d-flex flex-column">
+    <div className="d-flex flex-column" style={{ backgroundColor: "#1D2125" }}>
       <Container
         fluid
-        className="login-page d-flex flex-column justify-content-end mb-1"
-        style={{ minHeight: "50vh" }}
+        className="login-page d-flex flex-column justify-content-center"
+        style={{ minHeight: "100vh" }}
       >
-        <p
-          className="brand-title mb-5"
-          style={{ cursor: "pointer" }}
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          {/* <img src={logo} alt="Logo" width={450} /> */}
-        </p>
-        <form
-          onSubmit={handleSumbit}
-          className="d-flex flex-column justify-content-center"
-        >
-          <div className="form-floating">
-            <input
-              type="text"
-              className="form-control"
-              id="username"
-              ref={userRef}
-              autoComplete="off"
-              placeholder="username"
-              value={login}
-              onChange={(e) => setLogin(e.target.value)}
-              required
-            />
-            <label htmlFor="username">Username</label>
-          </div>
-          <div className="form-floating">
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              placeholder="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <label htmlFor="password">Password</label>
-          </div>
-          <button type="submit" name="Zaloguj" />
-        </form>
+        <Row className="d-flex">
+          <Col lg={6} md={12} >
+            <form
+              onSubmit={handleSumbit}
+              className="d-flex flex-column justify-content-center"
+            >
+              <div className="form-floating">
+                <input
+                  type="text"
+                  className="form-control"
+                  id="username"
+                  ref={userRef}
+                  autoComplete="off"
+                  placeholder="username"
+                  value={login}
+                  onChange={(e) => setLogin(e.target.value)}
+                  required
+                />
+                <label htmlFor="username">Username</label>
+              </div>
+              <div className="form-floating">
+                <input
+                  type="password"
+                  className="form-control"
+                  id="password"
+                  placeholder="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <label htmlFor="password">Password</label>
+              </div>
+              <button type="submit" name="Zaloguj" />
+            </form>
+          </Col>
+          <Col lg={6} className="d-none d-lg-flex" style={{ color: "white" }}>
+            Jakiś obrazek
+          </Col>
+        </Row>
       </Container>
       <Container className="d-flex justify-content-center">
         <span className="form-error-msg">{errMsg}</span>
       </Container>
-    </Container>
+    </div>
   );
 }
