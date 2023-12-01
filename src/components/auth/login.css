@@ -1,27 +1,33 @@
 .login-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 5rem;
-    height: 40vh !important;
-    /* padding-bottom: 0rem; */
-    /* background-image: url("../images/login-background.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  height: 40vh !important;
+  /* padding-bottom: 0rem; */
+  /* background-image: url("../images/login-background.png");
     background-size: cover;
     background-position: center center; */
 }
 
 .form-floating {
-    padding-bottom: 20px;
-    width: 250px;
-    font-weight: 600;
-    color: rgb(218, 216, 216)
+  padding-bottom: 20px;
+  width: 250px;
+  font-weight: 600;
+  color: rgb(218, 216, 216);
 }
 
 .login-form {
-    /* background-color: #525252 !important; */
-    /* background-color: #353333 !important; */
-    background-color: transparent !important;
-    border: 1px solid rgb(102, 100, 100) !important;
+  /* background-color: #525252 !important; */
+  /* background-color: #353333 !important; */
+  background-color: transparent !important;
+  border: 1px solid rgb(102, 100, 100) !important;
 }
 
-
+.carousel .slide {
+  display: flex !important;
+  justify-content: center !important;
+}
+.carousel-item-next {
+    color: red !important;
+}
