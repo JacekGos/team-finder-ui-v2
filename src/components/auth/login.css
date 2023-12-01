@@ -12,12 +12,16 @@
 
 .form-floating {
     padding-bottom: 20px;
-    width: 300px;
+    width: 250px;
     font-weight: 600;
-    color: rgb(0, 0, 0)
+    color: rgb(218, 216, 216)
 }
 
 .login-form {
-    background-color: #1D2125;
-    border: 1px solid rgb(185, 184, 184);
+    /* background-color: #525252 !important; */
+    /* background-color: #353333 !important; */
+    background-color: transparent !important;
+    border: 1px solid rgb(102, 100, 100) !important;
 }
+
+

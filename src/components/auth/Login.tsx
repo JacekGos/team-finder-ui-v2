@@ -3,11 +3,9 @@ import { useNavigate, useLocation, Navigate } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import axios from "axios";
 import "./login.css";
-
+import Pictures from "./Pictures";
 
 export default function Login() {
-  console.log("login page");
-
   const ipAddr = window.location.hostname;
   const port = window.location.port;
 
@@ -85,49 +83,99 @@ export default function Login() {
   };
 
   return (
-    <div className="d-flex flex-column" style={{ backgroundColor: "#1D2125" }}>
+    <div
+      className="d-flex flex-column p-0"
+      style={{ backgroundColor: "#1D2125" }}
+    >
       <Container
         fluid
-        className="d-flex flex-column justify-content-center"
+        className="d-flex flex-column justify-content-center p-0"
         style={{ minHeight: "100vh" }}
       >
-        <Row className="d-flex">
-          <Col lg={6} md={12} >
-            <form
-              onSubmit={handleSumbit}
-              className="d-flex flex-column justify-content-center"
-            >
-              <div className="form-floating">
-                <input
-                  type="text"
-                  className="form-control login-form"
-                  id="username"
-                  ref={userRef}
-                  autoComplete="off"
-                  placeholder="username"
-                  value={login}
-                  onChange={(e) => setLogin(e.target.value)}
-                  required
-                />
-                <label htmlFor="username">Username</label>
+        <Row>
+          <Col
+            lg={6}
+            md={12}
+            className="d-flex justify-content-center"
+            style={{ height: "80vh" }}
+          >
+            <div className="d-flex flex-column justify-content-center">
+              <p
+                style={{
+                  color: "#b2b2b8",
+                  textAlign: "center",
+                  fontSize: 27,
+                  fontWeight: 500,
+                }}
+              >
+                Zaloguj się lub utwórz konto
+              </p>
+
+              <div
+                style={{
+                  // backgroundColor: "#545455",
+                  backgroundColor: "#353333",
+                  borderRadius: 5,
+                  padding: "40px 15px 15px 15px",
+                }}
+                className="d-flex flex-column align-items-center justify-content-center"
+              >
+                <form
+                  onSubmit={handleSumbit}
+                  className="d-flex flex-column justify-content-center align-items-center"
+                >
+                  <div className="form-floating">
+                    <input
+                      type="text"
+                      className="form-control login-form"
+                      style={{ color: "white" }}
+                      id="username"
+                      ref={userRef}
+                      autoComplete="off"
+                      placeholder="username"
+                      value={login}
+                      onChange={(e) => setLogin(e.target.value)}
+                      required
+                    />
+                    <label htmlFor="username">Username</label>
+                  </div>
+                  <div className="form-floating">
+                    <input
+                      type="password"
+                      className="form-control login-form"
+                      style={{ color: "white" }}
+                      id="password"
+                      placeholder="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                    />
+                    <label htmlFor="password">Password</label>
+                  </div>
+                  <button
+                    type="submit"
+                    className="btn-base btn-filled"
+                    style={{ width: 150 }}
+                    name="Zaloguj"
+                  >
+                    Zaloguj
+                  </button>
+                </form>
+                <div className="d-flex justify-content-center align-items-center">
+                  <button
+                    type="submit"
+                    className="btn-not-filled mt-3"
+                    style={{ width: 300, height: 50 }}
+                    name="Zaloguj"
+                  >
+                    Nie masz konta? Zarejestruj się
+                  </button>
+                </div>
               </div>
-              <div className="form-floating">
-                <input
-                  type="password"
-                  className="form-control login-form"
-                  id="password"
-                  placeholder="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-                <label htmlFor="password">Password</label>
-              </div>
-              <button type="submit" name="Zaloguj" />
-            </form>
+            </div>
           </Col>
-          <Col lg={6} className="d-none d-lg-flex" style={{ color: "white" }}>
-            Jakiś obrazek
+          <Col lg={6} className="d-none d-lg-flex align-items-center" style={{ color: "white" }}>
+            <Pictures />
           </Col>
         </Row>
       </Container>

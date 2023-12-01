@@ -87,7 +87,7 @@ export default function FilterBarDesktopView(
               className="btn-base text-nowrap d-flex align-items-center"
               onClick={() => props.handleModal(false, "advanced")}
             >
-              <BsSliders2 className="me-1 d-none d-flex" />
+              <BsSliders2 className="me-1 d-flex" />
               Więcej filtrów
             </button>
           </Col>

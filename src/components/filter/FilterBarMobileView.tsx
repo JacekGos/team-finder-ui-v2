@@ -1,6 +1,7 @@
 import { Button, Col, Row } from "react-bootstrap";
 import "./filterbar.css";
 import { SlMagnifier } from "react-icons/sl";
+import { BsSliders2 } from "react-icons/bs";
 
 export interface IFilterBarMobileViewProps {
   handleModal: (isFullscreen: boolean, type: string) => void;
@@ -30,6 +31,7 @@ export default function FilterBarMobileView(props: IFilterBarMobileViewProps) {
             className="btn-base text-nowrap d-flex align-items-center me-2"
             onClick={() => props.handleModal(true, "advanced")}
           >
+            <BsSliders2 className="me-1 d-flex" />
             Więcej filtrów
           </button>
         </Col>
