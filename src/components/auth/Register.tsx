@@ -1,12 +1,13 @@
 import { useState, useRef, useEffect, useContext } from "react";
 import { useNavigate, useLocation, Navigate } from "react-router-dom";
-import { Col, Container, Nav, Row } from "react-bootstrap";
+import { Button, Col, Container, Nav, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+import { IoMdArrowBack } from "react-icons/io";
 import "./login.css";
 import Pictures from "./Pictures";
 
-export default function Login() {
+export default function Register() {
   const ipAddr = window.location.hostname;
   const port = window.location.port;
 
@@ -17,9 +18,10 @@ export default function Login() {
   const userRef = useRef<HTMLInputElement>(null);
   const errRef = useRef<HTMLInputElement>(null);
 
-  const [login, setLogin] = useState("");
-  const [password, setPassword] = useState("");
-  const [errMsg, setErrMsg] = useState("");
+  const [login, setLogin] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [repeatPassword, setRepeatPassword] = useState<string>("");
+  const [errMsg, setErrMsg] = useState<string>("");
 
   useEffect(() => {
     userRef.current?.focus();
@@ -105,15 +107,23 @@ export default function Login() {
               style={{ minWidth: 370 }}
             >
               <div className="d-flex justify-content-center align-items-center mb-4">
+                <Nav.Link as={NavLink} to={"/signin"} eventKey={1}>
+                  <Button
+                    className="rounded-circle input-circle"
+                    style={{ aspectRatio: "1/1" }}
+                  >
+                    <IoMdArrowBack size={20} style={{ color: "white" }} />
+                  </Button>
+                </Nav.Link>
                 <span
                   style={{
                     color: "#b2b2b8",
-                    textAlign: "center",
                     fontSize: 27,
                     fontWeight: 500,
+                    marginLeft: 10,
                   }}
                 >
-                  Zaloguj się lub utwórz konto
+                  Utwórz konto
                 </span>
               </div>
 
@@ -157,27 +167,28 @@ export default function Login() {
                     />
                     <label htmlFor="password">Password</label>
                   </div>
+                  <div className="form-floating">
+                    <input
+                      type="password"
+                      className="form-control login-form"
+                      style={{ color: "white" }}
+                      id="password"
+                      placeholder="repeat-password"
+                      value={repeatPassword}
+                      onChange={(e) => setRepeatPassword(e.target.value)}
+                      required
+                    />
+                    <label htmlFor="password">Repeat password </label>
+                  </div>
                   <button
                     type="submit"
                     className="btn-base btn-filled"
                     style={{ width: 150 }}
                     name="Zaloguj"
                   >
-                    Zaloguj
+                    Załóż konto
                   </button>
                 </form>
-                <div className="d-flex justify-content-center align-items-center">
-                  <Nav.Link as={NavLink} to={"/register"} eventKey={1}>
-                    <button
-                      type="submit"
-                      className="btn-not-filled mt-3"
-                      style={{ width: 300, height: 50 }}
-                      name="Zaloguj"
-                    >
-                      Nie masz konta? Zarejestruj się
-                    </button>
-                  </Nav.Link>
-                </div>
               </div>
             </div>
           </Col>

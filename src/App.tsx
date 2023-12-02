@@ -6,6 +6,7 @@ import Events from "./components/events/Events";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/auth/Login";
 import MainLayout from "./layout/MainLayout";
+import Register from "./components/auth/Register";
 
 function App() {
   return (
@@ -35,6 +36,15 @@ function App() {
                   <Filterbar />
                   <Events />
                 </div>
+              }
+            />
+            <Route
+              path="/register"
+              element={
+                <>
+                  <Topbar />
+                  <Register />
+                </>
               }
             />
             <Route
