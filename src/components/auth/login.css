@@ -4,10 +4,6 @@
   align-items: center;
   padding-top: 5rem;
   height: 40vh !important;
-  /* padding-bottom: 0rem; */
-  /* background-image: url("../images/login-background.png");
-    background-size: cover;
-    background-position: center center; */
 }
 
 .form-floating {
@@ -18,8 +14,6 @@
 }
 
 .login-form {
-  /* background-color: #525252 !important; */
-  /* background-color: #353333 !important; */
   background-color: transparent !important;
   border: 1px solid rgb(102, 100, 100) !important;
 }
@@ -29,5 +23,16 @@
   justify-content: center !important;
 }
 .carousel-item-next {
-    color: red !important;
+  color: red !important;
+}
+
+.img-description-container {
+  background: rgba(105, 107, 105, 0.5);
+  border-radius: 5px;
+  padding: 0px !important;
+}
+
+.img-description {
+    font-size: 30px;
+    font-weight: 400;
 }

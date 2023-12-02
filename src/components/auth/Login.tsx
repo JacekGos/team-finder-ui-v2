@@ -113,7 +113,6 @@ export default function Login() {
 
               <div
                 style={{
-                  // backgroundColor: "#545455",
                   backgroundColor: "#353333",
                   borderRadius: 5,
                   padding: "40px 15px 15px 15px",
@@ -174,7 +173,7 @@ export default function Login() {
               </div>
             </div>
           </Col>
-          <Col lg={6} className="d-none d-lg-flex align-items-center" style={{ color: "white" }}>
+          <Col lg={6} className="d-none d-lg-flex align-items-center p-5" style={{ color: "white" }}>
             <Pictures />
           </Col>
         </Row>
