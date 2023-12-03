@@ -93,9 +93,8 @@ export default function Register() {
       <Container
         fluid
         className="d-flex flex-column justify-content-center p-0"
-        style={{ minHeight: "100vh" }}
       >
-        <Row>
+        <Row style={{width: '100vw'}}>
           <Col
             lg={6}
             md={12}

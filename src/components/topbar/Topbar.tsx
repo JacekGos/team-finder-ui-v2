@@ -24,17 +24,17 @@ export default function Topbar(props: ITopbarProps) {
           <TbMenu2 color="#62707a" />
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto" />
+            <Nav className="me-auto" />
+            <Nav>
+              <Nav.Item>
+                <Nav.Link as={NavLink} to={"/events"} eventKey={1}>
+                  <div className="nav-item-not-filled">Wydarzenia</div>
+                </Nav.Link>
+              </Nav.Item>
+            </Nav>
           <Nav>
             <Nav.Item>
-              <Nav.Link as={NavLink} to={"/events"} eventKey={1}>
-                <div className="nav-item-not-filled">Wydarzenia</div>
-              </Nav.Link>
-            </Nav.Item>
-          </Nav>
-          <Nav>
-            <Nav.Item>
-            <Nav.Link as={NavLink} to={"/signin"} eventKey={2}>
+              <Nav.Link as={NavLink} to={"/signin"} eventKey={2}>
                 <button className="btn-base btn-filled">Zaloguj</button>
               </Nav.Link>
             </Nav.Item>

@@ -63,3 +63,12 @@
     background-color: #333C43;
     border-radius: 3px;
 }
+
+.common-nav>.navbar-nav .nav-link.active{
+  border-bottom: 3px solid rgb(0, 153, 255);
+}
+
+/* .navbar-nav .nav-link.active,
+.navbar-nav .show>.nav-link {
+  border-bottom: 3px solid rgb(0, 153, 255);
+} */

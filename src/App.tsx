@@ -22,6 +22,15 @@ function App() {
               </>
             }
           />
+          <Route
+            path="/register"
+            element={
+              <>
+                <Topbar />
+                <Register />
+              </>
+            }
+          />
           <Route path="/" element={<MainLayout />}>
             <Route
               index
@@ -39,15 +48,6 @@ function App() {
               }
             />
             <Route
-              path="/register"
-              element={
-                <>
-                  <Topbar />
-                  <Register />
-                </>
-              }
-            />
-            <Route
               path="/events"
               element={
                 <div
@@ -62,22 +62,6 @@ function App() {
                 </div>
               }
             />
-
-            {/* <Route
-              path="/"
-              element={
-                <div
-                  style={{
-                    marginTop: 60,
-                    maxHeight: "100%",
-                    backgroundColor: "#1D2125",
-                  }}
-                >
-                  <Filterbar />
-                  <Events />
-                </div>
-              }
-            /> */}
           </Route>
         </Routes>
       </HashRouter>
