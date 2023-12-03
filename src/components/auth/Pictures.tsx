@@ -8,7 +8,7 @@ import picture3 from "../../assets/sport3.jpg";
 export interface IPicturesProps {}
 
 export default function Pictures(props: IPicturesProps) {
-  const interval = 2000;
+  const interval = 2500;
   const maxHeight = 430;
 
   return (

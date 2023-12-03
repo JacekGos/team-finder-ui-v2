@@ -18,6 +18,10 @@
   border: 1px solid rgb(102, 100, 100) !important;
 }
 
+.login-form:focus {
+  box-shadow: 0px 0px 16px -7px rgba(104, 126, 222, 1) !important;
+}
+
 .carousel .slide {
   display: flex !important;
   justify-content: center !important;
