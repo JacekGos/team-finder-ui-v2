@@ -88,29 +88,21 @@ export default function Login() {
       className="d-flex flex-column p-0"
       style={{ backgroundColor: "#1D2125" }}
     >
-      <Container
-        fluid
-        className="d-flex flex-column justify-content-center p-0"
-      >
-        <Row style={{width: '100vw'}}>
+      <div>
+        <Row style={{width: '100vw', paddingLeft: 25}}>
           <Col
             lg={6}
             md={12}
-            className="d-flex justify-content-center"
+            className="d-flex justify-content-center "
             style={{ height: "80vh" }}
           >
             <div
               className="d-flex flex-column justify-content-center"
-              style={{ minWidth: 370 }}
+              style={{ minWidth: 300 }}
             >
               <div className="d-flex justify-content-center align-items-center mb-4">
                 <span
-                  style={{
-                    color: "#b2b2b8",
-                    textAlign: "center",
-                    fontSize: 27,
-                    fontWeight: 400,
-                  }}
+                className="auth-form-title"
                 >
                   Zaloguj się lub utwórz konto
                 </span>
@@ -126,7 +118,7 @@ export default function Login() {
               >
                 <form
                   onSubmit={handleSumbit}
-                  className="d-flex flex-column justify-content-center align-items-center"
+                  className="d-flex flex-column justify-content-center align-items-center "
                 >
                   <div className="form-floating">
                     <input
@@ -188,7 +180,7 @@ export default function Login() {
             <Pictures />
           </Col>
         </Row>
-      </Container>
+      </div>
       <Container className="d-flex justify-content-center">
         <span className="form-error-msg">{errMsg}</span>
       </Container>

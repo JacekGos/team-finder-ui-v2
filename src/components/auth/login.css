@@ -6,6 +6,10 @@
   height: 40vh !important;
 }
 
+.auth-form {
+  max-width: 80vw !important;
+}
+
 .form-floating {
   padding-bottom: 20px;
   width: 250px;
@@ -15,7 +19,7 @@
 
 .login-form {
   background-color: transparent !important;
-  border: 1px solid rgb(102, 100, 100) !important;
+  border: 1px solid rgb(78, 106, 124) !important;
 }
 
 .login-form:hover {
@@ -31,9 +35,6 @@
   display: flex !important;
   justify-content: center !important;
 }
-.carousel-item-next {
-  color: red !important;
-}
 
 .img-description-container {
   background: rgba(105, 107, 105, 0.5);
@@ -42,6 +43,19 @@
 }
 
 .img-description {
-    font-size: 30px;
-    font-weight: 300;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.auth-form-title {
+  color: #b2b2b8;
+  text-align: center;
+  font-size: 27px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 576px) {
+  .auth-form-title {
+    font-size: 22px;
+  }
 }

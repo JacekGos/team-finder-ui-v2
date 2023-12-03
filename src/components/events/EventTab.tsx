@@ -50,40 +50,43 @@ export default function EventTab(props: IEventTabProps) {
           <Col
             xs={3}
             className="d-flex align-items-center justify-content-center "
-            style={{ backgroundColor: "#1D2125", borderRadius: 3, maxHeight: '100%' }}
+            style={{
+              backgroundColor: "#1D2125",
+              borderRadius: 3,
+              maxHeight: "100%",
+            }}
           >
             {icon(props.event.discipline)}
           </Col>
           <Col xs={9} style={{ color: "white" }}>
             <Row className="h-50">
-              <Col
-                className="d-flex align-items-center justify-content-start"
-                style={{ fontSize: 15 }}
-              >
+              <Col className="d-flex align-items-center justify-content-start event-tab-name">
                 {props.event.name}
               </Col>
-              <Col
-                className="d-flex align-items-center justify-content-end"
-                style={{ fontSize: 13 }}
-              >
-                <Badge bg="secondary">{props.event.price} PLN</Badge>
+              <Col className="d-flex align-items-center justify-content-end event-tab-price">
+                <Badge bg="secondary">{`${
+                  props.event.price > 0 ? `${props.event.price} PLN` : "FREE"
+                }`}</Badge>
               </Col>
             </Row>
             <Row className="h-50">
               <Col
-                className="d-flex align-items-center justify-content-start"
-                style={{ fontSize: 15 }}
+                xl={4}
+                xs={6}
+                className="d-flex align-items-center justify-content-start event-tab-date"
               >
                 {props.event.date}
               </Col>
               <Col
-                className="d-flex align-items-center justify-content-end"
-                style={{ fontSize: 13 }}
+                xl={8}
+                xs={6}
+                className="d-flex align-items-center justify-content-end event-tab-address"
               >
                 {props.event.address}
                 <HiOutlineLocationMarker
-                  size={15}
-                  style={{ color: "white", marginLeft: 3 }}
+                  className="event-tab-loc-marker"
+                  // size={15}
+                  // style={{ color: "white", marginLeft: 3 }}
                 />
               </Col>
             </Row>

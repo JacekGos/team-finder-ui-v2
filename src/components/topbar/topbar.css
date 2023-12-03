@@ -33,12 +33,6 @@
   background-color: #103861 !important;
 }
 
-@media screen and (max-width: 992px) {
-  .nav-item {
-    margin-left: 5px !important;
-  }
-}
-
 .brand-title {
   font-size: 20px;
   margin-bottom: 0;
@@ -74,7 +68,8 @@
   margin-bottom: -1px;
 }
 
-/* .navbar-nav .nav-link.active,
-.navbar-nav .show>.nav-link {
-  border-bottom: 3px solid rgb(0, 153, 255);
-} */
+@media screen and (max-width: 992px) {
+  .nav-item {
+    margin-left: 5px !important;
+  }
+}

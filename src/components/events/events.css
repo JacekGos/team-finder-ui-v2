@@ -1,28 +1,78 @@
 .event-tab {
-    height: 80px;
-    background-color: #535557;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  height: 80px;
+  background-color: #535557;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .event-tab:hover {
-    background-color: #62707a;
+  background-color: #62707a;
 }
 
 .tabs {
-    border-bottom: solid 2px rgb(78, 106, 124) !important;
+  border-bottom: solid 2px rgb(78, 106, 124) !important;
 }
 
 .tabs > .nav-item > .nav-link {
-    height: 35px !important;
-    font-size: 15px !important;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}   
+  height: 35px !important;
+  font-size: 15px !important;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
 
-.tabs > .nav-item > .active{
-    border: 1px solid rgb(78, 106, 124) !important;
-    background-color: #333C43 !important;
-    color: #f5f5f5 !important;
-}  
+.tabs > .nav-item > .active {
+  border: 1px solid rgb(78, 106, 124) !important;
+  background-color: #333c43 !important;
+  color: #f5f5f5 !important;
+}
+
+.event-tab-name {
+  font-size: 17px;
+}
+
+.event-tab-price {
+  font-size: 17px;
+}
+
+.event-tab-date {
+  font-size: 17px;
+}
+
+.event-tab-address {
+  font-size: 17px;
+}
+
+.event-tab-loc-marker {
+  font-size: 15px;
+  margin-left: 3px;
+}
+
+@media screen and (max-width: 576px) {
+  .event-tab-name {
+    font-size: 14px;
+  }
+
+  .event-tab-price {
+    font-size: 14px;
+  }
+
+  .event-tab-date {
+    font-size: 14px;
+  }
+
+  .event-tab-address {
+    font-size: 14px;
+  }
+
+  .event-tab-loc-marker {
+    /* font-size: 12px; */
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .event-tab-address {
+    font-size: 14px;
+  }
+}

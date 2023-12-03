@@ -90,11 +90,8 @@ export default function Register() {
       className="d-flex flex-column p-0"
       style={{ backgroundColor: "#1D2125" }}
     >
-      <Container
-        fluid
-        className="d-flex flex-column justify-content-center p-0"
-      >
-        <Row style={{width: '100vw'}}>
+      <div>
+        <Row style={{ width: "100vw", paddingLeft: 25 }}>
           <Col
             lg={6}
             md={12}
@@ -103,23 +100,16 @@ export default function Register() {
           >
             <div
               className="d-flex flex-column justify-content-center"
-              style={{ minWidth: 370 }}
+              style={{ minWidth: 300 }}
             >
               <div className="d-flex justify-content-center align-items-center mb-4">
                 <Nav.Link as={NavLink} to={"/signin"} eventKey={1}>
-                  <button
-                    className="btn-base rounded-circle d-flex align-items-center p-2"
-                  >
+                  <button className="btn-base rounded-circle d-flex align-items-center p-2 me-2">
                     <IoMdArrowBack size={18} style={{ color: "white" }} />
                   </button>
                 </Nav.Link>
                 <span
-                  style={{
-                    color: "#b2b2b8",
-                    fontSize: 27,
-                    fontWeight: 400,
-                    marginLeft: 10,
-                  }}
+                className="auth-form-title"
                 >
                   Utwórz konto
                 </span>
@@ -176,7 +166,7 @@ export default function Register() {
                       onChange={(e) => setRepeatPassword(e.target.value)}
                       required
                     />
-                    <label htmlFor="password" >Powtórz hasło</label>
+                    <label htmlFor="password">Powtórz hasło</label>
                   </div>
                   <button
                     type="submit"
@@ -198,7 +188,7 @@ export default function Register() {
             <Pictures />
           </Col>
         </Row>
-      </Container>
+      </div>
       <Container className="d-flex justify-content-center">
         <span className="form-error-msg">{errMsg}</span>
       </Container>
