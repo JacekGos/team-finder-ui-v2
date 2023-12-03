@@ -1,71 +1,77 @@
 .navbar {
-    background-color: #1D2125;
-    border-bottom: solid 1px #828587;
-    z-index: 1100;
-    height: max-content;
-    padding-bottom: 0 !important;
-  }
-  
-  .navbar-brand {
-    margin-right: 0px !important;
-    padding: 0 10px 0 10px !important;
-  }
-  
+  background-color: #1d2125;
+  border-bottom: solid 1px #828587;
+  z-index: 1100;
+  height: max-content;
+  padding-bottom: 0 !important;
+}
+
+.navbar-brand {
+  margin-right: 0px !important;
+  padding: 0 10px 0 10px !important;
+}
+
+.nav-item {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.nav-link {
+  color: #b6c2cf !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+.navbar-toggler {
+  border: 1px solid rgb(0, 153, 255) !important;
+  margin-bottom: 5px !important;
+  margin-right: 5px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.1rem #103861 !important;
+  background-color: #103861 !important;
+}
+
+@media screen and (max-width: 992px) {
   .nav-item {
-    display: flex !important;
-    align-items: center !important;
+    margin-left: 5px !important;
   }
-  
-  .nav-link {
-    color: #B6C2CF !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-  }
-  
-  .navbar-toggler {
-    border: 1px solid rgb(0, 153, 255) !important;
-    margin-bottom: 5px !important;
-    margin-right: 5px;
-  }
-  
-  .navbar-toggler:focus {
-    box-shadow: 0 0 0 0.1rem #103861 !important;
-    background-color: #103861 !important;
-  }
-  
-  @media screen and (max-width: 992px) {
-    .nav-item {
-      margin-left: 5px !important;
-    }
-  }
+}
 
 .brand-title {
-    font-size: 20px;
-    margin-bottom: 0;
-    font-weight: 400;
-    color: #B6C2CF;
-    display: flex;
-    align-items: center;
-    padding: 1px 5px 1px 5px;
-    transition: background-color 0.2s;
+  font-size: 20px;
+  margin-bottom: 0;
+  font-weight: 400;
+  color: #b6c2cf;
+  display: flex;
+  align-items: center;
+  padding: 1px 5px 1px 5px;
+  transition: background-color 0.2s;
 }
 
 .brand-title:hover {
-    background-color: #333C43;
-    border-radius: 3px;
+  background-color: #333c43;
+  border-radius: 3px;
 }
 
 .nav-item-not-filled {
-    padding: 5px;
+  padding: 5px;
 }
 
 .nav-item-not-filled:hover {
-    background-color: #333C43;
-    border-radius: 3px;
+  background-color: #333c43;
+  border-radius: 3px;
 }
 
-.common-nav>.navbar-nav .nav-link.active{
-  border-bottom: 3px solid rgb(0, 153, 255);
+.common-nav > .nav-link {
+  margin-bottom: 1px;
+}
+
+
+.common-nav > .nav-link.active {
+  border-bottom: 2px solid rgb(0, 153, 255);
+  margin-bottom: -1px;
 }
 
 /* .navbar-nav .nav-link.active,
