@@ -11,12 +11,12 @@ export default function FilterBarMobileView(props: IFilterBarMobileViewProps) {
   return (
     <>
       <Row
-        className="position-fixed w-100"
+        // className="position-fixed w-100"
+        className="w-100"
         style={{
           height: 90,
           padding: "0 0 0 10px",
           backgroundColor: "#1D2125",
-          marginTop: -20,
         }}
       >
         <Col className="d-flex align-items-center ps-0 overflow-scroll no-scrollbar">

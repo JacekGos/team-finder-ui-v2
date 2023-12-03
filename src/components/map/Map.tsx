@@ -14,6 +14,7 @@ import { icons } from "./icons";
 
 export interface IMapProps {
   events: SportEvent[];
+  mapStyle: string;
 }
 
 type LatLngLiteral = google.maps.LatLngLiteral;
@@ -37,6 +38,7 @@ const closeOptions = {
 };
 
 export default function Map(props: IMapProps) {
+  console.log('map style: ', props.mapStyle);
   const mapRef = useRef<GoogleMap>();
   const mapCenter = useMemo<LatLngLiteral>(
     () => ({ lat: 52.52245662560353, lng: 19.341419774433 }),
@@ -65,7 +67,6 @@ export default function Map(props: IMapProps) {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: getApiKey(),
-    // googleMapsApiKey: "",
     version: "weekly",
     nonce: undefined,
     language: "PL",
@@ -85,7 +86,6 @@ export default function Map(props: IMapProps) {
     });
     if (foundIcon != undefined) return foundIcon["icon"];
     else return undefined;
-    // return foundIcon !== undefined ? foundIcon["icon"] : undefined;
   }
 
   const testEvents: LatLngLiteral[] = [
@@ -111,41 +111,12 @@ export default function Map(props: IMapProps) {
       center={mapCenter}
       options={options}
       onLoad={onLoad}
-      mapContainerClassName="map-container"
+      mapContainerClassName={props.mapStyle}
     >
       <MarkerClusterer>
         {(clusterer) => markersArray(clusterer)}
       </MarkerClusterer>
-
-      {}
-
       <CircleF center={testEvents[0]} radius={100000} options={closeOptions} />
-      {/* <Marker key={0} position={props.events[0].location} /> */}
-      {/* <MarkerClusterer
-        gridSize={30}
-        onClick={() => {
-          console.log("marker clicked");
-        }}
-        averageCenter
-        enableRetinaIcons
-      > */}
-      {/* {props.events.map((event: SportEvent, index) => (
-          <Marker key={index} position={event.location} />
-        ))} */}
-      {/* </MarkerClusterer> */}
-      {/* <MarkerClusterer gridSize={30}>
-        {
-          (clusterer) =>
-            props.events.map((event, index) => (
-              <Marker
-                key={index}
-                position={event.location}
-                clusterer={clusterer}
-                icon={getIcon(event.discipline)}
-              />
-            ))
-        }
-      </MarkerClusterer> */}
     </GoogleMap>
   ) : (
     <Loading />

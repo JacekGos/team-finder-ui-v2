@@ -21,18 +21,20 @@ export default function EventsMobileView(props: IEventsMobileViewProps) {
   );
   return (
     <>
-      <Tabs style={{ marginTop: 150 }}>
-        <Tab
-          eventKey="events"
-          title="Wydarzenia"
-          style={{ overflowY: "scroll", maxHeight: "70vh" }}
-        >
-          {eventsData}
-        </Tab>
-        <Tab eventKey="map" title="Mapa">
-          <Map events={props.events}/>
-        </Tab>
-      </Tabs>
+      <Container fluid className="p-0 d-block" style={{ marginTop: 0}}>
+        <Tabs>
+          <Tab
+            eventKey="events"
+            title="Wydarzenia"
+            style={{ overflowY: "scroll", maxHeight: "70vh" }}
+          >
+            {eventsData}
+          </Tab>
+          <Tab eventKey="map" title="Mapa">
+            <Map events={props.events} mapStyle="map-container-mobile"/>
+          </Tab>
+        </Tabs>
+      </Container>
     </>
   );
 }

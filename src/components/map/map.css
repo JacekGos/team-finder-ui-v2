@@ -1,5 +1,11 @@
-.map-container {
+.map-container-desktop {
     width: 100%;
     height: 80vh;
+    border-radius: 5px;
+}
+
+.map-container-mobile {
+    width: 100%;
+    height: 70vh;
     border-radius: 5px;
 }
