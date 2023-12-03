@@ -63,14 +63,14 @@ body {
   background-color: transparent;
   border: none;
   color: #b2b2b8;
-  transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.3s, color 0.2s;
   border-radius: 7px;
 }
 
 .btn-not-filled:hover {
-  background-color: #686666;
+  background-color: rgba(149, 150, 151, 0.1);
   border-radius: 7px;
-  color: #000000;
+  color: #cecbcb;
 }
 
 .btn-filled:hover,

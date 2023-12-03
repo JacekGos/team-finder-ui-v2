@@ -110,7 +110,7 @@ export default function Login() {
                     color: "#b2b2b8",
                     textAlign: "center",
                     fontSize: 27,
-                    fontWeight: 500,
+                    fontWeight: 400,
                   }}
                 >
                   Zaloguj się lub utwórz konto
@@ -119,7 +119,7 @@ export default function Login() {
 
               <div
                 style={{
-                  backgroundColor: "#353333",
+                  backgroundColor: "#333C43",
                   borderRadius: 5,
                   padding: "40px 15px 15px 15px",
                 }}
@@ -142,7 +142,7 @@ export default function Login() {
                       onChange={(e) => setLogin(e.target.value)}
                       required
                     />
-                    <label htmlFor="username">Username</label>
+                    <label htmlFor="username">Nazwa użytkownika</label>
                   </div>
                   <div className="form-floating">
                     <input
@@ -155,7 +155,7 @@ export default function Login() {
                       onChange={(e) => setPassword(e.target.value)}
                       required
                     />
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">Hasło</label>
                   </div>
                   <button
                     type="submit"

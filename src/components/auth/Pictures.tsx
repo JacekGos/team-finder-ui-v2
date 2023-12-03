@@ -13,7 +13,7 @@ export default function Pictures(props: IPicturesProps) {
 
   return (
     <div>
-      <Carousel fade={true}>
+      <Carousel fade={true} slide={false}>
         <Carousel.Item interval={interval} style={{ textAlign: "center" }}>
           <div
             style={{

@@ -108,18 +108,17 @@ export default function Register() {
             >
               <div className="d-flex justify-content-center align-items-center mb-4">
                 <Nav.Link as={NavLink} to={"/signin"} eventKey={1}>
-                  <Button
-                    className="rounded-circle input-circle"
-                    style={{ aspectRatio: "1/1" }}
+                  <button
+                    className="btn-base rounded-circle d-flex align-items-center p-2"
                   >
-                    <IoMdArrowBack size={20} style={{ color: "white" }} />
-                  </Button>
+                    <IoMdArrowBack size={18} style={{ color: "white" }} />
+                  </button>
                 </Nav.Link>
                 <span
                   style={{
                     color: "#b2b2b8",
                     fontSize: 27,
-                    fontWeight: 500,
+                    fontWeight: 400,
                     marginLeft: 10,
                   }}
                 >
@@ -129,7 +128,7 @@ export default function Register() {
 
               <div
                 style={{
-                  backgroundColor: "#353333",
+                  backgroundColor: "#333C43",
                   borderRadius: 5,
                   padding: "40px 15px 15px 15px",
                 }}
@@ -152,7 +151,7 @@ export default function Register() {
                       onChange={(e) => setLogin(e.target.value)}
                       required
                     />
-                    <label htmlFor="username">Username</label>
+                    <label htmlFor="username">Nazwa użytkownika</label>
                   </div>
                   <div className="form-floating">
                     <input
@@ -165,7 +164,7 @@ export default function Register() {
                       onChange={(e) => setPassword(e.target.value)}
                       required
                     />
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">Hasło</label>
                   </div>
                   <div className="form-floating">
                     <input
@@ -178,7 +177,7 @@ export default function Register() {
                       onChange={(e) => setRepeatPassword(e.target.value)}
                       required
                     />
-                    <label htmlFor="password">Repeat password </label>
+                    <label htmlFor="password" >Powtórz hasło</label>
                   </div>
                   <button
                     type="submit"
