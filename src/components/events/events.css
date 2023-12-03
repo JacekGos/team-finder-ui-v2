@@ -11,18 +11,18 @@
 }
 
 .tabs {
-    border-bottom: solid 10px #103861 !important;
+    border-bottom: solid 2px rgb(78, 106, 124) !important;
 }
 
 .tabs > .nav-item > .nav-link {
     height: 35px !important;
     font-size: 15px !important;
-    border-top-left-radius: 17px;
-    border-top-right-radius: 17px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }   
 
 .tabs > .nav-item > .active{
-    border: 1px solid #23476b !important;
-    background-color: #0E2237 !important;
+    border: 1px solid rgb(78, 106, 124) !important;
+    background-color: #333C43 !important;
     color: #f5f5f5 !important;
 }  

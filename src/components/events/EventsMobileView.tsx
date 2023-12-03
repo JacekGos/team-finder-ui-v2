@@ -22,7 +22,7 @@ export default function EventsMobileView(props: IEventsMobileViewProps) {
   return (
     <>
       <Container fluid className="p-0 d-block" style={{ marginTop: 0}}>
-        <Tabs>
+        <Tabs className="tabs">
           <Tab
             eventKey="events"
             title="Wydarzenia"

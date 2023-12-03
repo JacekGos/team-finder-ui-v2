@@ -11,10 +11,9 @@ export default function FilterBarMobileView(props: IFilterBarMobileViewProps) {
   return (
     <>
       <Row
-        // className="position-fixed w-100"
         className="w-100"
         style={{
-          height: 90,
+          height: 70,
           padding: "0 0 0 10px",
           backgroundColor: "#1D2125",
         }}
