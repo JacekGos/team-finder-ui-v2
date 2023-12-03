@@ -3,7 +3,8 @@ export interface SportEvent {
     name: string;
     price: number;
     date: string;
-    address: string;
+    city: string;
+    street: string;
     discipline: string;
     location: Location;
 }

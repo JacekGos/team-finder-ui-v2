@@ -10,14 +10,6 @@ import { Container } from "react-bootstrap";
 export interface IEventsProps {}
 
 export default function Events(props: IEventsProps) {
-//   const eventsData = useMemo(
-//     () =>
-//       tmpEvents.map((data, key) => {
-//         return <EventTab key={key} index={key} event={data} />;
-//       }),
-//     []
-//   );
-
   return (
     <>
       <Container fluid className="ps-2">

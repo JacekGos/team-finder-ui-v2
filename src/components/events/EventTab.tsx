@@ -45,7 +45,7 @@ export default function EventTab(props: IEventTabProps) {
 
   return (
     <>
-      <Container fluid className="mt-1 event-tab">
+      <Container fluid className="mt-2 event-tab">
         <Row className="h-100 p-1">
           <Col
             xs={3}
@@ -82,12 +82,13 @@ export default function EventTab(props: IEventTabProps) {
                 xs={6}
                 className="d-flex align-items-center justify-content-end event-tab-address"
               >
-                {props.event.address}
-                <HiOutlineLocationMarker
-                  className="event-tab-loc-marker"
-                  // size={15}
-                  // style={{ color: "white", marginLeft: 3 }}
-                />
+                <span>
+                  {props.event.city}
+                </span>
+                <span className="d-none d-xl-block">
+                  {`, ${props.event.street}`}
+                </span>
+                <HiOutlineLocationMarker className="event-tab-loc-marker" />
               </Col>
             </Row>
           </Col>
