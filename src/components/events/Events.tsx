@@ -1,17 +1,21 @@
 import { tmpEvents } from "./tmpData/events";
-import { useCallback, useMemo, useRef } from "react";
 import "./events.css";
-import EventTab from "./EventTab";
 import MediaQuery from "react-responsive";
 import EventsDesktopView from "./EventsDesktopView";
 import EventsMobileView from "./EventsMobileView";
 import { Container } from "react-bootstrap";
+import useAxios from "../../hooks/useAxios";
 
 export interface IEventsProps {}
 
 export default function Events(props: IEventsProps) {
-
-
+  const { response, loading, error, sendData } = useAxios({
+    method: "GET",
+    url: `/posts/1`,
+    headers: {
+      accept: "*/*",
+    },
+  });
 
   return (
     <>
@@ -20,7 +24,7 @@ export default function Events(props: IEventsProps) {
           <EventsDesktopView events={tmpEvents} />
         </MediaQuery>
         <MediaQuery maxWidth={992}>
-          <EventsMobileView events={null} />
+          <EventsMobileView events={tmpEvents} />
         </MediaQuery>
         {/* <FilterModal
         show={showModal}

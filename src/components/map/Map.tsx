@@ -13,7 +13,7 @@ import { SportEvent } from "../events/model/eventModel";
 import { icons } from "./icons";
 
 export interface IMapProps {
-  events: SportEvent[] | null;
+  events: SportEvent[];
   mapStyle: string;
 }
 
@@ -77,10 +77,10 @@ export default function Map(props: IMapProps) {
     authReferrerPolicy: undefined,
   });
 
-  function getIcon(discipline: string): string | undefined {
+  function getIcon(activityType: string): string | undefined {
     let foundIcon;
     icons.find((icon: any) => {
-      if (icon.type === discipline) {
+      if (icon.type === activityType) {
         foundIcon = icon;
       }
     });
