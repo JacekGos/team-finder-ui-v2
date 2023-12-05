@@ -6,7 +6,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Warszawa",
     street: "Rozbrat 26",
-    discipline: "football",
+    activityType: "football",
     location: { lat: 52.1976, lng: 20.8814 },
   },
   {
@@ -16,7 +16,7 @@ export const tmpEvents = [
     date: "09.06 15:00",
     city: "Warszawa",
     street: "Miedziana 8",
-    discipline: "volleyball",
+    activityType: "volleyball",
     location: { lat: 52.1776, lng: 20.9814 },
   },
   {
@@ -26,7 +26,7 @@ export const tmpEvents = [
     date: "10.06 14:00",
     city: "Warszawa",
     street: "Nowowiejska 37B",
-    discipline: "football",
+    activityType: "football",
     location: { lat: 52.5776, lng: 20.3814 },
   },
   {
@@ -36,7 +36,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Warszawa",
     street: "Gen. S. Kaliskiego 2",
-    discipline: "basketball",
+    activityType: "basketball",
     location: { lat: 52.5776, lng: 20.8814 },
   },
   {
@@ -46,7 +46,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Warszawa",
     street: "M. Keniga 20",
-    discipline: "football",
+    activityType: "football",
     location: { lat: 50.8823, lng: 20.5845 },
   },
   {
@@ -56,7 +56,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Kielce",
     street: "Krakowska 15",
-    discipline: "tennis",
+    activityType: "tennis",
     location: { lat: 50.6823, lng: 20.0845 },
   },
   {
@@ -66,7 +66,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Kielce",
     street: "Żytnia 1",
-    discipline: "bicycle",
+    activityType: "bicycle",
     location: { lat: 51.0823, lng: 20.5845 },
   },
   {
@@ -76,7 +76,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Kielce",
     street: "Warszawska 20",
-    discipline: "football",
+    activityType: "football",
     location: { lat: 51.0723, lng: 20.4845 },
   },
   {
@@ -86,7 +86,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Kielce",
     street: "Tarnowska 18",
-    discipline: "basketball",
+    activityType: "basketball",
     location: { lat: 50.7664, lng: 20.5498 },
   },
   {
@@ -96,7 +96,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Kielce",
     street: "Krakowska 25",
-    discipline: "football",
+    activityType: "football",
     location: { lat: 50.8664, lng: 20.4498 },
   },
   {
@@ -106,7 +106,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Poznań",
     street: "Głogowska 18",
-    discipline: "tennis",
+    activityType: "tennis",
     location: { lat: 52.3976, lng: 20.6814 },
   },
   {
@@ -116,7 +116,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Poznań",
     street: "Bukowska 31",
-    discipline: "bicycle",
+    activityType: "bicycle",
     location: { lat: 52.3976, lng: 16.6229 },
   },
   {
@@ -126,7 +126,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Poznań",
     street: "Słowiańska 22",
-    discipline: "football",
+    activityType: "football",
     location: { lat: 52.4116, lng: 17.0229 },
   },
   {
@@ -136,7 +136,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Poznań",
     street: "Winogrady 8",
-    discipline: "basketball",
+    activityType: "basketball",
     location: { lat: 52.4176, lng: 17.1229 },
   },
   {
@@ -146,7 +146,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Poznań",
     street: "Kazimierza Wielkiego 3",
-    discipline: "football",
+    activityType: "football",
     location: { lat: 52.3516, lng: 16.8229 },
   },
   {
@@ -156,7 +156,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Gdańsk",
     street: "Powstańców Warszawskich 8",
-    discipline: "tennis",
+    activityType: "tennis",
     location: { lat: 54.357, lng: 18.6285 },
   },
   {
@@ -166,7 +166,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Gdańsk",
     street: "3 Maja 21",
-    discipline: "football",
+    activityType: "football",
     location: { lat: 54.3587, lng: 18.6416 },
   },
   {
@@ -176,7 +176,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Gdańsk",
     street: "Rolna 8",
-    discipline: "volleyball",
+    activityType: "volleyball",
     location: { lat: 54.3842, lng: 18.5807 },
   },
   {
@@ -186,7 +186,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Gdańsk",
     street: "Warszawska 18",
-    discipline: "tennis",
+    activityType: "tennis",
     location: { lat: 54.332, lng: 18.576 },
   },
   {
@@ -196,7 +196,7 @@ export const tmpEvents = [
     date: "09.06 14:00",
     city: "Gdańsk",
     street: "Grodza Kamienna 28",
-    discipline: "bicycle",
+    activityType: "bicycle",
     location: { lat: 54.3395, lng: 18.6501 },
   },
 ];

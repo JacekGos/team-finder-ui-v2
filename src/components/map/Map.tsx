@@ -13,7 +13,7 @@ import { SportEvent } from "../events/model/eventModel";
 import { icons } from "./icons";
 
 export interface IMapProps {
-  events: SportEvent[];
+  events: SportEvent[] | null;
   mapStyle: string;
 }
 
@@ -100,7 +100,7 @@ export default function Map(props: IMapProps) {
         position={event.location}
         clusterer={clusterer}
         onLoad={() => {console.log('marker loaded')}}
-        icon={getIcon(event.discipline)}
+        icon={getIcon(event.activityType)}
       />
     ));
   };

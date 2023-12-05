@@ -56,7 +56,7 @@ export default function EventTab(props: IEventTabProps) {
               maxHeight: "100%",
             }}
           >
-            {icon(props.event.discipline)}
+            {icon(props.event.activityType)}
           </Col>
           <Col xs={9} style={{ color: "white" }}>
             <Row className="h-50">

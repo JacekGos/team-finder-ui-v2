@@ -10,6 +10,9 @@ import { Container } from "react-bootstrap";
 export interface IEventsProps {}
 
 export default function Events(props: IEventsProps) {
+
+
+
   return (
     <>
       <Container fluid className="ps-2">
@@ -17,7 +20,7 @@ export default function Events(props: IEventsProps) {
           <EventsDesktopView events={tmpEvents} />
         </MediaQuery>
         <MediaQuery maxWidth={992}>
-          <EventsMobileView events={tmpEvents} />
+          <EventsMobileView events={null} />
         </MediaQuery>
         {/* <FilterModal
         show={showModal}
