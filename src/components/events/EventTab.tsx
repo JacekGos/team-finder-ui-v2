@@ -12,7 +12,7 @@ export interface IEventTabProps {
 }
 
 export default function EventTab(props: IEventTabProps) {
-  const iconSize = 45;
+  const iconSize = 48;
   const iconColor = "white";
 
   const icon = (discipline: string) => {

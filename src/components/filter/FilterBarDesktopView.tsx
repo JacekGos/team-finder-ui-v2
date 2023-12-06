@@ -4,6 +4,8 @@ import { BiFootball, BiTennisBall } from "react-icons/bi";
 import { FaVolleyballBall, FaBasketballBall } from "react-icons/fa";
 import { IoIosBicycle } from "react-icons/io";
 import { BsSliders2 } from "react-icons/bs";
+import { GiTennisBall } from "react-icons/gi";
+
 
 export interface IFilterBarDesktopViewProps {
   handleModal: (isFullscreen: boolean, type: string) => void;
@@ -44,7 +46,9 @@ export default function FilterBarDesktopView(
               className="rounded-circle input-circle"
               style={{ aspectRatio: "1/1" }}
             >
-              <BiFootball size={iconSize} style={{ color: `${iconColor}` }} />
+              <BiFootball size={iconSize} 
+              style={{ color: '#914950' }} />
+              {/* style={{ color: `${iconColor}` }} /> */}
             </Button>
             <Button
               className="rounded-circle input-circle"
@@ -52,7 +56,8 @@ export default function FilterBarDesktopView(
             >
               <FaVolleyballBall
                 size={iconSize}
-                style={{ color: `${iconColor}` }}
+                // style={{ color: `${iconColor}` }}
+                style={{ color: "#c5db1f" }}
               />
             </Button>
             <Button
@@ -61,20 +66,25 @@ export default function FilterBarDesktopView(
             >
               <FaBasketballBall
                 size={iconSize}
-                style={{ color: `${iconColor}` }}
+                style={{ color: '#6b2210' }}
+                // style={{ color: `${iconColor}` }}
               />
             </Button>
             <Button
               className="rounded-circle input-circle"
               style={{ aspectRatio: "1/1" }}
             >
-              <BiTennisBall size={iconSize} style={{ color: `${iconColor}` }} />
+              <GiTennisBall size={iconSize} 
+              style={{ color: '#914950' }} />
+              {/* style={{ color: `${iconColor}` }} /> */}
             </Button>
             <Button
               className="rounded-circle input-circle"
               style={{ aspectRatio: "1/1" }}
             >
-              <IoIosBicycle size={iconSize} style={{ color: `${iconColor}` }} />
+              <IoIosBicycle size={iconSize} 
+              style={{ color: '#EABC39' }} />
+              {/* style={{ color: `${iconColor}` }} /> */}
             </Button>
           </Col>
           <Col

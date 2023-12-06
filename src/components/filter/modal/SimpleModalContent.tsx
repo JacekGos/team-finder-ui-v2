@@ -4,6 +4,8 @@ import { TfiClose } from "react-icons/tfi";
 import { BiFootball, BiTennisBall } from "react-icons/bi";
 import { FaVolleyballBall, FaBasketballBall } from "react-icons/fa";
 import { IoIosBicycle } from "react-icons/io";
+import { GiTennisBall } from "react-icons/gi";
+
 
 export interface ISimpleModalContentProps {
   handleClose: React.Dispatch<React.SetStateAction<boolean>>;
@@ -31,7 +33,7 @@ export default function SimpleModalContent(props: ISimpleModalContentProps) {
       name: "Koszykówka",
     },
     {
-      icon: <BiTennisBall size={iconSize} style={{ color: `${iconColor}` }} />,
+      icon: <GiTennisBall size={iconSize} style={{ color: `${iconColor}` }} />,
       name: "Tenis",
     },
     {
