@@ -9,7 +9,6 @@ import { SportEvent } from "./model/eventModel";
 export interface IEventTabProps {
   index: number;
   event: SportEvent;
-  // handleClick
 }
 
 export default function EventTab(props: IEventTabProps) {
@@ -18,21 +17,21 @@ export default function EventTab(props: IEventTabProps) {
 
   const icon = (discipline: string) => {
     switch (discipline) {
-      case "football":
+      case "FOOTBALL":
         return <BiFootball size={iconSize} style={{ color: `${iconColor}` }} />;
-      case "volleyball":
+      case "VOLLEYBALL":
         return (
           <FaVolleyballBall size={iconSize} style={{ color: `${iconColor}` }} />
         );
-      case "basketball":
+      case "BASKETBALL":
         return (
           <FaBasketballBall size={iconSize} style={{ color: `${iconColor}` }} />
         );
-      case "tennis":
+      case "TENNIS":
         return (
           <BiTennisBall size={iconSize} style={{ color: `${iconColor}` }} />
         );
-      case "bicycle":
+      case "BICYCLE":
         return (
           <IoIosBicycle size={iconSize} style={{ color: `${iconColor}` }} />
         );
@@ -75,7 +74,7 @@ export default function EventTab(props: IEventTabProps) {
                 xs={6}
                 className="d-flex align-items-center justify-content-start event-tab-date"
               >
-                {props.event.date}
+                {props.event.date.replace('T', ' ')}
               </Col>
               <Col
                 xl={8}

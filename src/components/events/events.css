@@ -1,7 +1,7 @@
 .event-tab {
   height: 80px;
-  background-color: #535557;
-  border-radius: 3px;
+  background-color: #334a5a;
+  border-radius: 7px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -36,7 +36,7 @@
 }
 
 .event-tab-date {
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .event-tab-address {
@@ -58,7 +58,7 @@
   }
 
   .event-tab-date {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .event-tab-address {
@@ -73,5 +73,9 @@
 @media screen and (max-width: 1200px) {
   .event-tab-address {
     font-size: 14px;
+  }
+
+  .event-tab-date {
+    font-size: 12px;
   }
 }

@@ -12,7 +12,7 @@ export interface IFilterBarDesktopViewProps {
 export default function FilterBarDesktopView(
   props: IFilterBarDesktopViewProps
 ) {
-  const iconSize = 35;
+  const iconSize = 30;
   const iconColor = "white";
 
   return (

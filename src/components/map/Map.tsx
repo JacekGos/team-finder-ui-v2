@@ -38,7 +38,6 @@ const closeOptions = {
 };
 
 export default function Map(props: IMapProps) {
-  console.log('map style: ', props.mapStyle);
   const mapRef = useRef<GoogleMap>();
   const mapCenter = useMemo<LatLngLiteral>(
     () => ({ lat: 52.52245662560353, lng: 19.341419774433 }),
@@ -99,7 +98,9 @@ export default function Map(props: IMapProps) {
         key={index}
         position={event.location}
         clusterer={clusterer}
-        onLoad={() => {console.log('marker loaded')}}
+        onLoad={() => {
+          console.log("marker loaded");
+        }}
         icon={getIcon(event.activityType)}
       />
     ));
@@ -116,7 +117,7 @@ export default function Map(props: IMapProps) {
       <MarkerClusterer>
         {(clusterer) => markersArray(clusterer)}
       </MarkerClusterer>
-      <CircleF center={testEvents[0]} radius={100000} options={closeOptions} />
+      {/* <CircleF center={testEvents[0]} radius={100000} options={closeOptions} /> */}
     </GoogleMap>
   ) : (
     <Loading />

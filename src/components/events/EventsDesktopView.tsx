@@ -6,14 +6,13 @@ import { SportEvent } from "./model/eventModel";
 
 export interface IEventsDesktopViewProps {
   events: SportEvent[];
-  // eventsData: React.ReactElement[];
-  // googleMaps: React.ReactElement;
 }
 
 export default function EventsDesktopView(props: IEventsDesktopViewProps) {
+  console.log('events: ', props.events);
   const eventsData = useMemo(
     () =>
-      props.events.map((data, key) => {
+      props.events?.map((data, key) => {
         return <EventTab key={key} index={key} event={data} />;
       }),
     []
@@ -31,7 +30,7 @@ export default function EventsDesktopView(props: IEventsDesktopViewProps) {
             {eventsData}
           </Col>
           <Col md={6}>
-            <Map events={props.events} mapStyle="map-container-desktop"/>
+            <Map events={props.events} mapStyle="map-container-desktop" />
           </Col>
         </Row>
       </Container>
