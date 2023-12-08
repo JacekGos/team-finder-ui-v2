@@ -31,7 +31,7 @@ export default function EventsMobileView(props: IEventsMobileViewProps) {
             {eventsData}
           </Tab>
           <Tab eventKey="map" title="Mapa">
-            <Map events={props.events} mapStyle="map-container-mobile"/>
+            <Map events={props.events} mapStyle="map-container-mobile" zoom={6}/>
           </Tab>
         </Tabs>
       </Container>

@@ -9,8 +9,8 @@ export const FilterProvider = ({ children }: { children: ReactNode }) => {
   const [activityType, setActivityType] = useState<string>("");
   const [location, setLocation] = useState<string>("");
 
-  console.log("location: ", location);
-  console.log("activityType: ", activityType);
+  console.log("filter location: ", location);
+  console.log("filter activityType: ", activityType);
 
   return (
     <FilterContext.Provider

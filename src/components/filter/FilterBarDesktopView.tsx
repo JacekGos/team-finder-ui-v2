@@ -5,6 +5,7 @@ import { FaVolleyballBall, FaBasketballBall } from "react-icons/fa";
 import { IoIosBicycle } from "react-icons/io";
 import { BsSliders2 } from "react-icons/bs";
 import { GiTennisBall } from "react-icons/gi";
+import { TfiClose } from "react-icons/tfi";
 import { useContext, useState } from "react";
 import { FilterContext } from "../../context/filter-context/FilterContext";
 
@@ -15,21 +16,77 @@ export interface IFilterBarDesktopViewProps {
 export default function FilterBarDesktopView(
   props: IFilterBarDesktopViewProps
 ) {
-  const { activityType, setLocation, setActivityType } = useContext(FilterContext);
-  const [locationSearchValue, setLocationSearchValue] = useState<string>("");
+  const { activityType, setActivityType, location, setLocation } =
+    useContext(FilterContext);
+  const [locationSearchValue, setLocationSearchValue] =
+    useState<string>(location);
 
-  const handleChange = (event: any) => {
+  const handleLocationChange = (event: any) => {
     setLocationSearchValue(event.target.value);
   };
 
-  const handleKeyDown = (event: any) => {
+  const handleClearLocation = () => {
+    console.log("clear location in filter");
+    setLocationSearchValue("");
+    setLocation("");
+  };
+
+  const handleLocationKeyDown = (event: any) => {
     if (event.key === "Enter") {
       setLocation(locationSearchValue);
     }
   };
 
+  const handleActivityChange = (activityName: string) => {
+    console.log("change acitivity for: ", activityName);
+    if (activityType === activityName) {
+      console.log("change acitivity for disabled");
+      setActivityType("");
+    } else {
+      setActivityType(activityName);
+    }
+  };
+
   const iconSize = 30;
   const iconColor = "white";
+
+  const activitiesIconsData = [
+    {
+      name: "FOOTBALL",
+      icon: <BiFootball size={iconSize} style={{ color: "#914950" }} />,
+    },
+    {
+      name: "VOLLEYBALL",
+      icon: <FaVolleyballBall size={iconSize} style={{ color: "#c5db1f" }} />,
+    },
+    {
+      name: "BASKETBALL",
+      icon: <FaBasketballBall size={iconSize} style={{ color: "#6b2210" }} />,
+    },
+    {
+      name: "TENNIS",
+      icon: <GiTennisBall size={iconSize} style={{ color: "#914950" }} />,
+    },
+    {
+      name: "BICYCLE",
+      icon: <IoIosBicycle size={iconSize} style={{ color: "#EABC39" }} />,
+    },
+  ];
+
+  const acitivitesIcons = activitiesIconsData.map((activity, index) => {
+    return (
+      <Button
+        key={index}
+        className={`rounded-circle input-circle ${
+          activityType === activity.name ? "input-circle-active" : ""
+        }`}
+        style={{ aspectRatio: "1/1" }}
+        onClick={() => handleActivityChange(activity.name)}
+      >
+        {activity.icon}
+      </Button>
+    );
+  });
 
   return (
     <>
@@ -41,16 +98,27 @@ export default function FilterBarDesktopView(
             md={4}
             className="d-flex align-items-center justify-content-start ps-4"
           >
-            <Form>
+            <Form className="d-flex justify-content-center align-items-center">
               <Form.Group>
                 <Form.Control
-                  placeholder="lokalizacja"
+                  placeholder={
+                    locationSearchValue ? locationSearchValue : "lokalizacja"
+                  }
+                  value={locationSearchValue}
                   className="input-search"
-                  onChange={handleChange}
-                  onKeyDown={handleKeyDown}
+                  onChange={handleLocationChange}
+                  onKeyDown={handleLocationKeyDown}
                 />
               </Form.Group>
             </Form>
+            {location && (
+              <button
+                className="btn-base rounded-circle d-flex align-items-center p-1 ms-2"
+                onClick={() => handleClearLocation()}
+              >
+                <TfiClose size={8} />
+              </button>
+            )}
           </Col>
           <Col
             xs={3}
@@ -58,41 +126,7 @@ export default function FilterBarDesktopView(
             md={4}
             className="d-flex align-items-center justify-content-between"
           >
-            <Button
-              className={`rounded-circle input-circle ${activityType === 'FOOTBALL' ? 'input-circle-active' : ''}`}
-              style={{ aspectRatio: "1/1" }}
-              onClick={() => setActivityType("FOOTBALL")}
-            >
-              <BiFootball size={iconSize} style={{ color: "#914950" }} />
-            </Button>
-            <Button
-              className={`rounded-circle input-circle ${activityType === 'VOLLEYBALL' ? 'input-circle-active' : ''}`}
-              style={{ aspectRatio: "1/1" }}
-              onClick={() => setActivityType("VOLLEYBALL")}
-            >
-              <FaVolleyballBall size={iconSize} style={{ color: "#c5db1f" }} />
-            </Button>
-            <Button
-              className={`rounded-circle input-circle ${activityType === 'BASKETBALL' ? 'input-circle-active' : ''}`}
-              style={{ aspectRatio: "1/1" }}
-              onClick={() => setActivityType("BASKETBALL")}
-            >
-              <FaBasketballBall size={iconSize} style={{ color: "#6b2210" }} />
-            </Button>
-            <Button
-              className={`rounded-circle input-circle ${activityType === 'TENNIS' ? 'input-circle-active' : ''}`}
-              style={{ aspectRatio: "1/1" }}
-              onClick={() => setActivityType("TENNIS")}
-            >
-              <GiTennisBall size={iconSize} style={{ color: "#914950" }} />
-            </Button>
-            <Button
-              className={`rounded-circle input-circle ${activityType === 'BICYCLE' ? 'input-circle-active' : ''}`}
-              style={{ aspectRatio: "1/1" }}
-              onClick={() => setActivityType("BICYCLE")}
-            >
-              <IoIosBicycle size={iconSize} style={{ color: "#EABC39" }} />
-            </Button>
+            {acitivitesIcons}
           </Col>
           <Col
             xs={7}

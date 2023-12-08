@@ -48,6 +48,22 @@
   margin-left: 3px;
 }
 
+@media screen and (max-width: 1400px) {
+  .event-tab-date {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .event-tab-address {
+    font-size: 14px;
+  }
+
+  .event-tab-date {
+    font-size: 12px;
+  }
+}
+
 @media screen and (max-width: 576px) {
   .event-tab-name {
     font-size: 14px;
@@ -64,18 +80,6 @@
   .event-tab-address {
     font-size: 14px;
   }
-
-  .event-tab-loc-marker {
-    /* display: none; */
-  }
 }
 
-@media screen and (max-width: 1200px) {
-  .event-tab-address {
-    font-size: 14px;
-  }
 
-  .event-tab-date {
-    font-size: 12px;
-  }
-}

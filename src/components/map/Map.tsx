@@ -15,6 +15,7 @@ import { icons } from "./icons";
 export interface IMapProps {
   events: SportEvent[];
   mapStyle: string;
+  zoom: number;
 }
 
 type LatLngLiteral = google.maps.LatLngLiteral;
@@ -51,7 +52,6 @@ export default function Map(props: IMapProps) {
     }),
     []
   );
-  const zoom = 7;
 
   const onLoad = useCallback((map: any) => (mapRef.current = map), []);
 
@@ -108,7 +108,7 @@ export default function Map(props: IMapProps) {
 
   return isLoaded ? (
     <GoogleMap
-      zoom={zoom}
+      zoom={props.zoom}
       center={mapCenter}
       options={options}
       onLoad={onLoad}

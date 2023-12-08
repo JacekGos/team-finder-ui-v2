@@ -30,7 +30,7 @@ export default function EventsDesktopView(props: IEventsDesktopViewProps) {
             {eventsData}
           </Col>
           <Col md={6}>
-            <Map events={props.events} mapStyle="map-container-desktop" />
+            <Map events={props.events} mapStyle="map-container-desktop" zoom={7}/>
           </Col>
         </Row>
       </Container>
