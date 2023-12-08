@@ -6,36 +6,55 @@ import EventsMobileView from "./EventsMobileView";
 import { Container } from "react-bootstrap";
 import useAxios from "../../hooks/useAxios";
 import { SportEvent } from "./model/eventModel";
-import { useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import Loading from "../utils/Loading";
+import { FilterContext } from "../../context/filter-context/FilterContext";
 
 export interface IEventsProps {}
+export interface AxiosRequestParams {
+  method: string;
+  url: string;
+}
+
+const url = process.env.REACT_APP_AXIOS_URL;
 
 export default function Events(props: IEventsProps) {
-
-  const url =  process.env.REACT_APP_AXIOS_URL;
-  console.log('url: ', url);
+  const { location, activityType } = useContext(FilterContext);
+  const [requestParams, setRequestParams] = useState<AxiosRequestParams>({
+    method: "GET",
+    url: "/v1/events",
+  });
 
   const { response, loading, error, sendData } = useAxios({
-    method: "GET",
-    url: `v1/events`,
+    method: `${requestParams.method}`,
+    url: `${requestParams.url}`,
+    params: {
+      activityType: activityType,
+      location: location,
+      range: 10000
+    },
     headers: {
       accept: "*/*",
     },
   });
 
+
   useEffect(() => {
     sendData();
   }, []);
 
-  console.log("loading: ", loading);
-  console.log("isError: ", error !== undefined);
-  console.log("error: ", error);
+  useEffect(() => {
+    setRequestParams({
+      method: "GET",
+      url: "/v1/events/filter",
+    });
+
+    sendData();
+  }, [location, activityType]);
 
   return (
     <>
       <Container fluid className="ps-2">
-        {/* <EventsDesktopView events={tmpEvents} /> */}
         {!loading && !error ? (
           <>
             <MediaQuery minWidth={992}>

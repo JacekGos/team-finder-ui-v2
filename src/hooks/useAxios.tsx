@@ -27,6 +27,7 @@ const useAxios = (axiosParams: AxiosRequestConfig) => {
 
   const sendData = () => {
     console.log('sending data..');
+    setLoading(true);
     fetchData(axiosParams);
   };
 
