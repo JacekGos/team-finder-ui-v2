@@ -5,15 +5,17 @@ import { FaVolleyballBall, FaBasketballBall } from "react-icons/fa";
 import { IoIosBicycle } from "react-icons/io";
 import { BsSliders2 } from "react-icons/bs";
 import { GiTennisBall } from "react-icons/gi";
-
+import { useContext } from "react";
+import { FilterContext } from "../../context/filter-context/FilterContext";
 
 export interface IFilterBarDesktopViewProps {
   handleModal: (isFullscreen: boolean, type: string) => void;
 }
 
-export default function FilterBarDesktopView(
-  props: IFilterBarDesktopViewProps
-) {
+export default function FilterBarDesktopView(props: IFilterBarDesktopViewProps) {
+
+  const {activityType, setActivityType} = useContext(FilterContext);
+
   const iconSize = 30;
   const iconColor = "white";
 
@@ -45,14 +47,15 @@ export default function FilterBarDesktopView(
             <Button
               className="rounded-circle input-circle"
               style={{ aspectRatio: "1/1" }}
+              onClick={() => setActivityType('FOOTBALL')}
             >
-              <BiFootball size={iconSize} 
-              style={{ color: '#914950' }} />
+              <BiFootball size={iconSize} style={{ color: "#914950" }} />
               {/* style={{ color: `${iconColor}` }} /> */}
             </Button>
             <Button
               className="rounded-circle input-circle"
               style={{ aspectRatio: "1/1" }}
+              onClick={() => setActivityType('VOLLEYBALL')}
             >
               <FaVolleyballBall
                 size={iconSize}
@@ -63,28 +66,26 @@ export default function FilterBarDesktopView(
             <Button
               className="rounded-circle input-circle"
               style={{ aspectRatio: "1/1" }}
+              onClick={() => setActivityType('BASKETBALL')}
             >
               <FaBasketballBall
                 size={iconSize}
-                style={{ color: '#6b2210' }}
-                // style={{ color: `${iconColor}` }}
+                style={{ color: "#6b2210" }}
               />
             </Button>
             <Button
               className="rounded-circle input-circle"
               style={{ aspectRatio: "1/1" }}
+              onClick={() => setActivityType('TENNIS')}
             >
-              <GiTennisBall size={iconSize} 
-              style={{ color: '#914950' }} />
-              {/* style={{ color: `${iconColor}` }} /> */}
+              <GiTennisBall size={iconSize} style={{ color: "#914950" }} />
             </Button>
             <Button
               className="rounded-circle input-circle"
               style={{ aspectRatio: "1/1" }}
+              onClick={() => setActivityType('BICYCLE')}
             >
-              <IoIosBicycle size={iconSize} 
-              style={{ color: '#EABC39' }} />
-              {/* style={{ color: `${iconColor}` }} /> */}
+              <IoIosBicycle size={iconSize} style={{ color: "#EABC39" }} />
             </Button>
           </Col>
           <Col
