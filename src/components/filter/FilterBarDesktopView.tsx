@@ -26,7 +26,6 @@ export default function FilterBarDesktopView(
   };
 
   const handleClearLocation = () => {
-    console.log("clear location in filter");
     setLocationSearchValue("");
     setLocation("");
   };
@@ -43,12 +42,12 @@ export default function FilterBarDesktopView(
       console.log("change acitivity for disabled");
       setActivityType("");
     } else {
+      console.log("setActivityType to type: ", activityType);
       setActivityType(activityName);
     }
   };
 
   const iconSize = 30;
-  const iconColor = "white";
 
   const activitiesIconsData = [
     {

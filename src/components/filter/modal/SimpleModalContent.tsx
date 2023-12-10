@@ -13,36 +13,45 @@ export interface ISimpleModalContentProps {
 }
 
 export default function SimpleModalContent(props: ISimpleModalContentProps) {
-  const { activityType, setActivityType, location, setLocation  } =
+  const { activityType, setActivityType, location, setLocation } =
     React.useContext(FilterContext);
-  const [locationSearchValue, setLocationSearchValue] = useState<string>(location);
-  const [activityChoosen, setActivityChoosen] = useState<string>("");
+  const [locationSearchValue, setLocationSearchValue] =
+    useState<string>(location);
 
   const handleShowEvents = () => {
-    console.log('location seatrch: ', locationSearchValue);
+    console.log("handleShowEvents: ", locationSearchValue);
     setLocation(locationSearchValue);
     props.handleClose(false);
   };
-  
+
   const handleLocationChange = (event: any) => {
     if (!event.target.value) {
-      console.log('set current location...', location);
+      console.log("empty location get previous: ", location);
       setLocationSearchValue(location);
     }
+    console.log("empty location get new: ", event.target.value);
     setLocationSearchValue(event.target.value);
   };
 
   const handleLocationKeyDown = (event: any) => {
-    if (event.key === "Enter") {
-      setLocation(locationSearchValue);
-    }
+    // if (event.key === "Enter") {
+    //   console.log("confirm new location: ", event.target.value);
+    //   setLocation(locationSearchValue);
+    // }
+  };
+
+  const handleClearLocation = () => {
+    setLocationSearchValue("");
+    setLocation("");
   };
 
   const handleActivityChange = (activityName: string) => {
-    console.log('handleActivityChange with name: ', activityName);
+    console.log("handleActivityChange with name: ", activityName);
     if (activityType === activityName) {
+      console.log("setActivityType to type: none");
       setActivityType("");
     } else {
+      console.log("setActivityType to type: ", activityName);
       setActivityType(activityName);
     }
   };
@@ -111,32 +120,41 @@ export default function SimpleModalContent(props: ISimpleModalContentProps) {
         </button>
       </Modal.Header>
       <Modal.Body className="modal-base p-0">
-        <Form>
-          <Form.Group className="position-fixed w-100 p-2">
-            <div className="d-flex align-items-center justify-content-center">
+        <div className="d-flex align-items-center justify-content-start mt-4">
+          <Form>
+            <Form.Group className="p-2">
               <Form.Control
-                placeholder={location ? location : 'lokalizacja'}
-                className="input-search mb-3"
+                placeholder={
+                  locationSearchValue ? locationSearchValue : "lokalizacja"
+                }
+                value={locationSearchValue}
+                className="input-search"
                 style={{ maxWidth: "50vh" }}
                 onChange={handleLocationChange}
                 onKeyDown={handleLocationKeyDown}
               />
-            </div>
-          </Form.Group>
-          <Form.Group className="d-flex flex-column align-items-start gap-3 ps-2 modal-bottom-border">
-            <div style={{ marginTop: 70 }}></div>
-            {acitivitesIcons}
-            <div style={{ marginTop: 70 }}></div>
-          </Form.Group>
-          <div className="d-flex align-items-center justify-content-center  w-100 mt-3">
+            </Form.Group>
+          </Form>
+          {location && (
             <button
-              className="btn-base btn-filled"
-              onClick={handleShowEvents}
+              className="btn-base rounded-circle d-flex align-items-center p-1 ms-2"
+              onClick={() => handleClearLocation()}
             >
-              Pokaż wydażenia
+              <TfiClose size={8} />
             </button>
-          </div>
-        </Form>
+          )}
+        </div>
+        <div
+          className="d-flex flex-column align-items-start gap-3 ps-2 modal-bottom-border"
+          style={{ marginTop: 30, marginBottom: 30 }}
+        >
+          {acitivitesIcons}
+        </div>
+        <div className="d-flex align-items-center justify-content-center w-100">
+          <button className="btn-base btn-filled" onClick={handleShowEvents}>
+            Pokaż wydażenia
+          </button>
+        </div>
       </Modal.Body>
     </>
   );

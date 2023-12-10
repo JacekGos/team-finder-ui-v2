@@ -49,6 +49,7 @@ export default function Events(props: IEventsProps) {
       url: "/v1/events/filter",
     });
 
+    console.log('filters changed in events')
     sendData();
   }, [location, activityType]);
 

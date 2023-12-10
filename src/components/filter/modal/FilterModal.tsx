@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Modal } from "react-bootstrap";
 import SimpleModalContent from "./SimpleModalContent";
-import AdvancedModalContent from "./AdvancedModalContent copy";
+import AdvancedModalContent from "./AdvancedModalContent";
 import { TfiClose } from "react-icons/tfi";
 import { boolean } from "yargs";
 

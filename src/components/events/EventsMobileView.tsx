@@ -12,6 +12,7 @@ export interface IEventsMobileViewProps {
 }
 
 export default function EventsMobileView(props: IEventsMobileViewProps) {
+  console.log('EventsMobileView: ');
   const eventsData = useMemo(
     () =>
       props.events.map((data, key) => {

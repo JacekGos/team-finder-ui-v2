@@ -9,7 +9,7 @@ export interface IEventsDesktopViewProps {
 }
 
 export default function EventsDesktopView(props: IEventsDesktopViewProps) {
-  console.log('events: ', props.events);
+  console.log('EventsDesktopView events: ', props.events);
   const eventsData = useMemo(
     () =>
       props.events?.map((data, key) => {
