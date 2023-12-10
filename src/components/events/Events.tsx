@@ -9,6 +9,7 @@ import { SportEvent } from "./model/eventModel";
 import { useContext, useEffect, useState } from "react";
 import Loading from "../utils/Loading";
 import { FilterContext } from "../../context/filter-context/FilterContext";
+import moment from "moment";
 
 export interface IEventsProps {}
 export interface AxiosRequestParams {
@@ -19,7 +20,7 @@ export interface AxiosRequestParams {
 const url = process.env.REACT_APP_AXIOS_URL;
 
 export default function Events(props: IEventsProps) {
-  const { location, activityType } = useContext(FilterContext);
+  const { location, activityType, range, price, date } = useContext(FilterContext);
   const [requestParams, setRequestParams] = useState<AxiosRequestParams>({
     method: "GET",
     url: "/v1/events",
@@ -31,7 +32,11 @@ export default function Events(props: IEventsProps) {
     params: {
       activityType: activityType,
       location: location,
-      range: 10000
+      range: range,
+      priceMin: price.min,
+      priceMax: price.max,
+      // startDate: date.from,
+      // endDate: date.to
     },
     headers: {
       accept: "*/*",
@@ -51,7 +56,7 @@ export default function Events(props: IEventsProps) {
 
     console.log('filters changed in events')
     sendData();
-  }, [location, activityType]);
+  }, [location, activityType, range, price, date]);
 
   return (
     <>

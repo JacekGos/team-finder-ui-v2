@@ -5,7 +5,7 @@ import { BiFootball, BiTennisBall } from "react-icons/bi";
 import { FaVolleyballBall, FaBasketballBall } from "react-icons/fa";
 import { IoIosBicycle } from "react-icons/io";
 import { GiTennisBall } from "react-icons/gi";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FilterContext } from "../../../context/filter-context/FilterContext";
 
 export interface ISimpleModalContentProps {
@@ -13,10 +13,9 @@ export interface ISimpleModalContentProps {
 }
 
 export default function SimpleModalContent(props: ISimpleModalContentProps) {
-  const { activityType, setActivityType, location, setLocation } =
-    React.useContext(FilterContext);
-  const [locationSearchValue, setLocationSearchValue] =
-    useState<string>(location);
+  
+  const { activityType, setActivityType, location, setLocation } = useContext(FilterContext);
+  const [locationSearchValue, setLocationSearchValue] = useState<string>(location);
 
   const handleShowEvents = () => {
     console.log("handleShowEvents: ", locationSearchValue);
@@ -26,18 +25,9 @@ export default function SimpleModalContent(props: ISimpleModalContentProps) {
 
   const handleLocationChange = (event: any) => {
     if (!event.target.value) {
-      console.log("empty location get previous: ", location);
       setLocationSearchValue(location);
     }
-    console.log("empty location get new: ", event.target.value);
     setLocationSearchValue(event.target.value);
-  };
-
-  const handleLocationKeyDown = (event: any) => {
-    // if (event.key === "Enter") {
-    //   console.log("confirm new location: ", event.target.value);
-    //   setLocation(locationSearchValue);
-    // }
   };
 
   const handleClearLocation = () => {
@@ -46,12 +36,9 @@ export default function SimpleModalContent(props: ISimpleModalContentProps) {
   };
 
   const handleActivityChange = (activityName: string) => {
-    console.log("handleActivityChange with name: ", activityName);
     if (activityType === activityName) {
-      console.log("setActivityType to type: none");
       setActivityType("");
     } else {
-      console.log("setActivityType to type: ", activityName);
       setActivityType(activityName);
     }
   };
@@ -131,7 +118,6 @@ export default function SimpleModalContent(props: ISimpleModalContentProps) {
                 className="input-search"
                 style={{ maxWidth: "50vh" }}
                 onChange={handleLocationChange}
-                onKeyDown={handleLocationKeyDown}
               />
             </Form.Group>
           </Form>
@@ -145,7 +131,6 @@ export default function SimpleModalContent(props: ISimpleModalContentProps) {
           )}
         </div>
         <div
-          // className="d-flex flex-column align-items-start gap-3 ps-2 modal-bottom-border"
           className="d-flex flex-column align-items-start gap-3 ps-2 pb-5 modal-bottom-border"
           style={{ marginTop: 30 }}
         >
