@@ -145,12 +145,13 @@ export default function SimpleModalContent(props: ISimpleModalContentProps) {
           )}
         </div>
         <div
-          className="d-flex flex-column align-items-start gap-3 ps-2 modal-bottom-border"
-          style={{ marginTop: 30, marginBottom: 30 }}
+          // className="d-flex flex-column align-items-start gap-3 ps-2 modal-bottom-border"
+          className="d-flex flex-column align-items-start gap-3 ps-2 pb-5 modal-bottom-border"
+          style={{ marginTop: 30 }}
         >
           {acitivitesIcons}
         </div>
-        <div className="d-flex align-items-center justify-content-center w-100">
+        <div className="d-flex align-items-center justify-content-center w-100 mt-5">
           <button className="btn-base btn-filled" onClick={handleShowEvents}>
             Pokaż wydażenia
           </button>
