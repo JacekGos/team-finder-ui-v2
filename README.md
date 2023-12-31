@@ -1,4 +1,6 @@
-# General info
+<h1 align="center">Team Finder - Frontend</h1>
+
+<h2 align="left">General info</h2>
 
 This is the frontend part of Team-Finder application.
 
